@@ -1,20 +1,24 @@
 EXPORT ppl_mat(dt1, dt2)
 BEGIN
 PRINT;                        
+// flushing HP's M1 & M2 matrix & inserting all data at once
 M1:={}; M1:=dt1;
 M2:={}; M2:=dt2;
 END;
   
 #PYTHON EXPORT ukmat()
 #start
+
+# for eval()
 from hpprime import *
+# for sin() cos() pi
 from math import *
 
 # Will return string {{..},{..},...,{..}}
 def _2str(a,b):
    c=list(zip(a,b)) # unpacking syntax isn't supported =[*zip(a,b)]
    return str(c).replace('[','{').replace(']','}').replace('(','{').replace(')','}')
-
+# some list comprehensions
 uk_x=[i*2 for i in range(-10,10)]
 uk_y1=[cos(i) for i in uk_x]
 uk_y2=[sin(i) for i in uk_x]
@@ -24,4 +28,5 @@ uk_y2=_2str(uk_x, uk_y2)
 # PPL function will execute 
 ttt=eval('ppl_mat('+uk_y1+','+uk_y2+')')  
 print('DONE')
+
 #end
