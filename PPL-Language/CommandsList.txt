@@ -1,0 +1,1144 @@
+HP Prime Version 2.1.14181 (2018 10 16) commands-list sorted by groups in txt and xls format (V2.0)
+
+Getting familiar to HP Prime I roughly sorted functions in "Command tree 13217.pdf" and "https://en.hpprime.club/docs/commands-list" into groups
+  General
+  Variables
+  Drawing
+  Geometry
+  Statistics
+  Probability
+  Finance
+  Solving
+  Calculus
+  Numbers
+  Trigonometry
+  Lists
+  Matrix
+  Polynomial
+  Strings
+  Bits
+  Programs
+Use mono-space font to display this file. Alternatively an excel version is available. Hope this file can simplify your way on Prime.
+
+                                                                                                                        Frank P, 23 March 2019
+
+  --- number corresponds ordering sequence of commands in "Command tree 13217.pdf"
+ |    (empty when command in Toolbox -> Catalog but not in a menu
+ |      +++  when command in Toolbox -> Catalog but not in a menu and not in https://en.hpprime.club/docs/commands-list)
+\ /
+
+ num |     command     |   menue location of the command on Prime    | starting description from "https://en.hpprime.club/docs/commands-list"             |
+     |                 |   (empty when only in Toolbox -> Catalog)   | (empty when command not in https://en.hpprime.club/docs/commands-list)             |
+ ----|-----------------|---------------------------------------------|------------------------------------------------------------------------------------|
+                                                                                                                                                          |
+     ====================== 1. General ==============================                                                                                     |
+                                                                                                                                                          |
+ +++ SERIAL                                                          | Returns the calculator serial number                                               |
+ +++ VERSION                                                         |                                                                                    |
+                                                                     |                                                                                    |
+ 425 CONVERT            Units    Tools                               | Converts Value in Unit1 to the corresponding value in compatible Unit2.            |
+ 426 MKSA               Units    Tools                               | Converts the measurement Value_Unit to its corresponding value and unit in..       |
+ 427 UFACTOR            Units    Tools                               | Unit factor conversion. Converts a measurement using a compound unit into a..      |
+ 428 USIMPLIFY          Units    Tools                               | Unit simplification. Simplifies Value in a complex unit expression Unitsexpr to..  |
+                                                                     |                                                                                    |
+     CHECK                                                           | Checks (selects) the corresponding symbolic definition field in the current app... |
+     UNCHECK                                                         | Unchecks (deselects) the corresponding symbolic definition field in the current..  |
+                                                                     |                                                                                    |
+     -                                                               | Subtraction. Returns the result of subtracting Object2 from Object 1. The..        |
+     (                                                               |                                                                                    |
+     *                                                               | Multiplication. Returns the result of multiplying Object1 and Object2. The..       |
+     /                                                               | Division. Returns the result of dividing Object1 by Object2. The objects may be..  |
+     ^                                                               | Exponentiation. Returns the result of raising Value1 to the power of Value2.       |
+     .                                                               | Returns the expression unchanged and un-evaluated. This function is mostly used..  |
+     +                                                               | Addition. Returns the result of adding Object2 to Object 1. The objects may be..   |
+     <                                                               | Strict less-than-inequality test. Returns 1 if the left side of the inequality..   |
+     <=                                                              | Less than or equal to. Tests whether or not Value1 is less than Value 2...         |
+     <>                                                              | ?: Not equal to. Tests if Value1 is not equal to Value 2. Returns 1 if true, 0..   |
+     =                                                               | ==: equal to. Tests is Value1=Value2. Returns 1 if true, 0 if false.               |
+     ==                                                              | ==: equal to. Tests is Value1=Value2. Returns 1 if true, 0 if false.               |
+     >                                                               | >: Greater than. Tests whether or not Value1 is greater than Value 2. Returns..    |
+     >=                                                              | =: Greater than or equal to. Tests whether or not Value 1 is either greater..      |
+                                                                     |                                                                                    |
+     alog10                                                          | Function x->10^x.                                                                  |
+     e                                                               | Natural logarithm base, internally represented as 2.71828182846                    |
+     EXP                                                             | The natural exponential. This is more accurate than e^x due to limitations of..    |
+     LN                                                              | Returns the natural logarithm of Value. The natural logarithm is the logarithm..   |
+     LOG                                                             | Returns the logarithm of Value in Base. By default, Base=10.                       |
+     log10                                                           | Common logarithm (base 10).                                                        |
+     logb                                                            | Logarithm of base b.                                                               |
+     PI                                                              | The ratio of the circumference to the diameter of any circle. Internally..         |
+     NTHROOT                                                         | NTHROOT: the nth root function. This Shift-key combination is the NTHROOT..        |
+     sqrt                                                            | Returns the square root of Expr                                                    |
+                                                                     |                                                                                    |
+     NEG                                                             | Unary minus. Changes the sign of Value or Expression. Used to enter negative..     |
+     MAXREAL                                                         | Maximum real number. The largest real number the HP Prime is capable of..          |
+     MINREAL                                                         | Minimum real number. The smallest real number that the HP Prime can represent...   |
+                                                                     |                                                                                    |
+     Ans                                                             | ANS: Last answer. Returns the result of the last calculation made in Home view..   |
+                                                                                                                                                          |
+     ========================= 2. Variables =========================                                                                                     |
+                                                                                                                                                          |
+     :=                                                              | Assigns object to variable.                                                        |
+     sto                                                             | Stores the first argument in the variable given as second argument                 |
+                                                                     |                                                                                    |
+     has                                                             | Checks if a variable is in an expression.                                          |
+     lname                                                           | List of variables in the expression.                                               |
+     lvar                                                            | List of variables of an object (with rational dependence).                         |
+     assume                                                          | Make an assumption on a variable.                                                  |
+     about                                                           | Returns the hypothesis made with assume on the variable a.                         |
+     algvar                                                          | List of the variables by ascending algebraic extension order.                      |
+     additionally                                                    | Make an additional assumption about a variable.                                    |
+                                                                     |                                                                                    |
+     compare                                                         | Returns 1 if type(arg1)<type(arg2) or if type(arg1)=type(arg2) and..               |
+     contains                                                        | Tests if a set contains an expression (returns the index+1 or 0).                  |
+     CopyVar                                                         | Copy the storage without evaluation of var1 into var2.                             |
+     purge                                                           | purge(varname) unassigns the variable varname                                      |
+     restart                                                         | Purges all the variables                                                           |
+     type                                                            | Returns n in [1..12] that defines the type of the argument                         |
+                                                                                                                                                          |
+     ========================== 3. Drawing =========================                                                                                      |
+                                                                                                                                                          |
+ 443 DRAWMENU           Program  Cmds  Drawing                       | Draw a menu containing the items specified                                         |
+ 444 C?PX               Program  Cmds  Drawing                       | Transform cartesian coordinates into pixel coordinates. Returns a list.            |
+ 445 PX?C               Program  Cmds  Drawing                       | Transform pixel coordinates into cartesian coordinates. Returns a list.            |
+ 446 RGB                Program  Cmds  Drawing                       | Returns an integer number that can be used as the color parameter for a drawing..  |
+ 447 FREEZE             Program  Cmds  Drawing                       | Prevents the screen from being redrawn after the program ends. Leaves the..        |
+                                                                     |                                                                                    |
+ 448 ARC_P              Program  Cmds  Drawing         Pixels        | Draws a circle on GROB G, centered at (x, y), with radius r. If ?1 and ?2 are..    |
+ 449 BLIT_P             Program  Cmds  Drawing         Pixels        | Copies the region of graphic srcG between point (sx1, sy1) and (sx2, sy2) into..   |
+ 450 DIMGROB_P          Program  Cmds  Drawing         Pixels        | Sets the dimensions of GROB G to w*h. Initializes the graphic G with color or..    |
+ 451 GETPIX_P           Program  Cmds  Drawing         Pixels        | Returns the color of the pixel of G with coordinates (x,y).                        |
+ 452 GROBH_P            Program  Cmds  Drawing         Pixels        | Returns the height of G.                                                           |
+ 453 GROBW_P            Program  Cmds  Drawing         Pixels        | Returns the width of G.                                                            |
+ 454 INVERT_P           Program  Cmds  Drawing         Pixels        | Inverts the rectangle on G defined by the diagonal points (x1,y1) and (x2,y2)...   |
+ 455 LINE_P             Program  Cmds  Drawing         Pixels        | Draws a line on GROB G between points (x1,y1) and (x2,y2).                         |
+ 456 PIXOFF_P           Program  Cmds  Drawing         Pixels        | Sets the color of the pixel of G with coordinates (x,y) to white.                  |
+ 457 PIXON_P            Program  Cmds  Drawing         Pixels        | Sets the color of the pixel of GROB G with coordinates (x,y).                      |
+ 458 RECT_P             Program  Cmds  Drawing         Pixels        | Draws a rectangle on G, with diagonal defined by points (x1,y1) and (x2,y2),..     |
+ 459 SUBGROB_P          Program  Cmds  Drawing         Pixels        | Sets graphic trgtG to be a copy of the area of srcG between points (x1,y1) and..   |
+ 460 TEXTOUT_P          Program  Cmds  Drawing         Pixels        | Draws text on graphic G at position (x, y) using font. Paints the background..     |
+ 461 FILLPOLY_P         Program  Cmds  Drawing         Pixels        | Fills the polygon specified by the provided pixel coordinates using the color..    |
+ 462 TRIANGLE_P         Program  Cmds  Drawing         Pixels        | Draws a triangle between specified pixel coordinates in the graphic using the..    |
+                                                                     |                                                                                    |
+ 463 ARC                Program  Cmds  Drawing         Cartesian     | Draws a circle on GROB G, centered at (x, y), with radius r. If ?1 and ?2 are..    |
+ 464 BLIT               Program  Cmds  Drawing         Cartesian     | Copies the region of graphic srcG between point (sx1, sy1) and (sx2, sy2) into..   |
+ 465 DIMGROB            Program  Cmds  Drawing         Cartesian     | Sets the dimensions of GROB G to w*h. Initializes the graphic G with color or..    |
+ 466 GETPIX             Program  Cmds  Drawing         Cartesian     | Returns the color of the pixel of G with coordinates (x,y).                        |
+ 467 GROBH              Program  Cmds  Drawing         Cartesian     | Returns the height of G.                                                           |
+ 468 GROBW              Program  Cmds  Drawing         Cartesian     | Returns the width of G.                                                            |
+ 469 INVERT             Program  Cmds  Drawing         Cartesian     | Inverts the rectangle on G defined by the diagonal points (x1,y1) and (x2,y2)...   |
+ 470 LINE               Program  Cmds  Drawing         Cartesian     | Draws a line on GROB G between points (x1,y1) and (x2,y2).                         |
+ 471 PIXOFF             Program  Cmds  Drawing         Cartesian     | Sets the color of the pixel of G with coordinates (x,y) to white.                  |
+ 472 PIXON              Program  Cmds  Drawing         Cartesian     | Sets the color of the pixel of GROB G with coordinates (x,y).                      |
+ 473 RECT               Program  Cmds  Drawing         Cartesian     | Draws a rectangle on G, with diagonal defined by points (x1,y1) and (x2,y2),..     |
+ 474 SUBGROB            Program  Cmds  Drawing         Cartesian     | Sets graphic trgtG to be a copy of the area of srcG between points (x1,y1) and..   |
+ 475 TEXTOUT            Program  Cmds  Drawing         Cartesian     | Draws text on graphic G at position (x, y) using font. Paints the background..     |
+ 476 FILLPOLY           Program  Cmds  Drawing         Cartesian     | Fills the polygon specified by the provided Cartésian coordinates using the..      |
+ 477 TRIANGLE           Program  Cmds  Drawing         Cartesian     | Draws a triangle between specified cartesian coordinates in the graphic using..    |
+                                                                     |                                                                                    |
+ +++ COLOR                                                           |                                                                                    |
+     curve                                                           | Reserved word.                                                                     |
+                                                                                                                                                          |
+     ========================== 4. Geometry =========================                                                                                     |
+                                                                                                                                                          |
+ 005 zoomin             Apps  Geometry Cmds            Zoom          |                                                                                    |
+ 006 zoomout            Apps  Geometry Cmds            Zoom          |                                                                                    |
+ 007 zoombox            Apps  Geometry Cmds            Zoom          |                                                                                    |
+ 008 zoomauto           Apps  Geometry Cmds            Zoom          |                                                                                    |
+ 009 zoominteger        Apps  Geometry Cmds            Zoom          |                                                                                    |
+ 010 zoomdecimal        Apps  Geometry Cmds            Zoom          |                                                                                    |
+ 011 zoomdundo          Apps  Geometry Cmds            Zoom          |                                                                                    |
+                                                                     |                                                                                    |
+                        Apps  Geometry Cmds                          | >> alternative location >>                                                         |
+                                                                     |                                                                                    |
+ 012 point              Toolbox  App   Geometry        Point         | Creates a point, given the coordinates of the point. Each coordinate may be a..    |
+ 013 element            Toolbox  App   Geometry        Point         | Creates a point on a geometric object whose abscissa is a given value or creates.. |
+ 014 midpoint           Toolbox  App   Geometry        Point         | Returns the midpoint of a segment. The argument can be either the name of a..      |
+ 015 center             Toolbox  App   Geometry        Point         | Returns the center of a circle                                                     |
+ 016 single_inter       Toolbox  App   Geometry        Point         | Gives one of the intersections of 2 curves or surfaces (or the intersection near.. |
+ 017 inter              Toolbox  App   Geometry        Point         | Returns the intersections of two curves as a vector.                               |
+ 018 randNorm           Toolbox  App   Geometry        Point         | Returns a random real with normal distribution N(mu,sigma)                         |
+                                                                     |                                                                                    |
+ 019 segment            Toolbox  App   Geometry        Line          | Draws a segment defined by its endpoints.                                          |
+ 020 half_line          Toolbox  App   Geometry        Line          | Given 2 points, draws a ray from the first point through the second point.         |
+ 021 line               Toolbox  App   Geometry        Line          | Draws a line. The arguments can be two points, a linear expression of the form..   |
+ 022 parallel           Toolbox  App   Geometry        Line          | Draws a line through a given point that is parallel to a given line.               |
+ 023 perpendicular      Toolbox  App   Geometry        Line          | Draws a line through a given point that is perpendicular to a given line. The..    |
+ 024 tangent            Toolbox  App   Geometry        Line          | Draws the tangent(s) to a given curve through a given point. The point does not..  |
+ 025 median_line        Toolbox  App   Geometry        Line          | Given three points that define a triangle, creates the median of the triangle..    |
+ 026 altitude           Toolbox  App   Geometry        Line          | Given three non-collinear points, draws the altitude of the triangle defined by..  |
+ 027 perpen_bisector    Toolbox  App   Geometry        Line          |                                                                                    |
+ 028 bisector           Toolbox  App   Geometry        Line          | Given three points, creates the bisector of the angle defined by the three..       |
+                                                                     |                                                                                    |
+ 029 triangle           Toolbox  App   Geometry        Polygon       | Draws a triangle, given its three vertices.                                        |
+ 030 isosceles_triangle Toolbox  App   Geometry        Polygon       | Draws an isosceles triangle defined by two of its vertices and an angle. The..     |
+ 031 right_triangle     Toolbox  App   Geometry        Polygon       | Draws a right triangle given two points and a scale factor. One leg of the right.. |
+ 032 quadrilateral      Toolbox  App   Geometry        Polygon       | Draws a quadrilateral from a set of four points.                                   |
+ 033 parallelogram      Toolbox  App   Geometry        Polygon       | Draws a parallelogram given three of its vertices. The fourth point is..           |
+ 034 rhombus            Toolbox  App   Geometry        Polygon       | Returns and draws the rhombus ABCD such that the angle (AB,AD)=a or such that in.. |
+ 035 rectangle          Toolbox  App   Geometry        Polygon       | Draws a rectangle given two consecutive vertices and a point on the side..         |
+ 036 polygon            Toolbox  App   Geometry        Polygon       | Draws a polygon from a set of vertices.                                            |
+ 037 isopolygon         Toolbox  App   Geometry        Polygon       | Draws a regular polygon given the first two vertices and the number of sides,..    |
+ 038 square             Toolbox  App   Geometry        Polygon       | Draws a square, given two consecutive vertices as points.                          |
+                                                                     |                                                                                    |
+ 039 circle             Toolbox  App   Geometry        Curve         |                                                                                    |
+ 040 circumcircle       Toolbox  App   Geometry        Curve         | Draws the circumcircle of a triangle; that is, the circle circumscribed about a..  |
+ 041 excircle           Toolbox  App   Geometry        Curve         | excircle(A,B,C) draws the A-excircle of the ABC triangle. Draws one of the..       |
+ 042 incircle           Toolbox  App   Geometry        Curve         | Draws the incircle of a triangle, the circle tangent to all three sides of the..   |
+ 043 ellipse            Toolbox  App   Geometry        Curve         | Draws an ellipse, given the foci and either a point on the ellipse or a scalar..   |
+ 044 hyperbola          Toolbox  App   Geometry        Curve         | Draws a hyperbola, given the foci and either a point on the hyperbola or a..       |
+ 045 parabola           Toolbox  App   Geometry        Curve         | Draws a parabola, given a focus point and a directrix line, or the vertex of the.. |
+ 046 conic              Toolbox  App   Geometry        Curve         | Plots the graph of a conic section defined by an expression in x and y.            |
+ 047 locus              Toolbox  App   Geometry        Curve         | Given a first point and a second point that is an element of (a point on) a..      |
+                                                                     |                                                                                    |
+ 048 plotfunc           Toolbox  App   Geometry        Plot          | Draws the plot of a function, given an expression in the independent variable x... |
+ 049 plotparam          Toolbox  App   Geometry        Plot          | plotparam(a(x)+i*b(x),x=x0..x1) draws the curve X=a(x),Y=b(x) x=x0..x1 or..        |
+ 050 plotpolar          Toolbox  App   Geometry        Plot          | plotpolar(f(x),x,a,b) draws the polar curve r=fx) for x in [a,b]                   |
+ 051 plotseq            Toolbox  App   Geometry        Plot          | For seeing the pth terms of the sequence u(0)=a,u(n)=f(u(n-1))                     |
+ 052 plotimplicit       Toolbox  App   Geometry        Plot          | plotimplicit(f(x,y),x,y) or plotimplicit(f(x,y),[x,y]) graph of f(x,y)=0           |
+ 053 plotfield          Toolbox  App   Geometry        Plot          | plotfield(f(t,y),[t,y]) draws the slope field of the differential equation..       |
+ 054 plotode            Toolbox  App   Geometry        Plot          | plotode(f(t,y),[t,y],[t0,y0]) draws the solution of y'=f(t,y) and y(t0)=y0 or of.. |
+ 055 plotlist           Toolbox  App   Geometry        Plot          | Draws a polygonal line through the points of abscissa 0,...,n and ordinate..       |
+                                                                     |                                                                                    |
+ 057 translation        Toolbox  App   Geometry        Transform     | Translates a geometric object along a given vector. The vector is given as the..   |
+ 058 reflection         Toolbox  App   Geometry        Transform     | Reflects a geometric object over a line or through a point. The latter is..        |
+ 059 rotation           Toolbox  App   Geometry        Transform     | Rotates a geometric object, about a given center point, through a given angle.     |
+ 060 homothety          Toolbox  App   Geometry        Transform     | Dilates a geometric object, with respect to a center point, by a scale factor.     |
+ 061 similarity         Toolbox  App   Geometry        Transform     | Dilates and rotates a geometric object about the same center point.                |
+ 062 projection         Toolbox  App   Geometry        Transform     | Draws the orthogonal projection of a point onto a curve.                           |
+ 063 inversion          Toolbox  App   Geometry        Transform     | Draws the inversion of a point, with respect to another point, by a scale..        |
+ 064 reciprocation      Toolbox  App   Geometry        Transform     | Returns the list where a point is replaced with its polar or a line is replaced..  |
+                                                                     |                                                                                    |
+ 065 abscissa           Toolbox  App   Geometry        Cartesian     | Returns the abscissa of a point or a vector.                                       |
+ 066 affix              Toolbox  App   Geometry        Cartesian     | Returns the coordinates of a point or both the x- and y-lengths of a vector as a.. |
+ 067 ordinate           Toolbox  App   Geometry        Cartesian     | Returns the ordinate of a point or a vector.                                       |
+ 068 coordinates        Toolbox  App   Geometry        Cartesian     | Returns the list (resp matrix) of the abscissa and of the ordinate of a point or.. |
+ 069 equation           Toolbox  App   Geometry        Cartesian     | Returns the Cartesian equation of a curve in x and y, or the Cartesian..           |
+ 070 parameq            Toolbox  App   Geometry        Cartesian     | Returns a parametric equation for the geometric object Obj. The parametric..       |
+ 071 polar_coordinates  Toolbox  App   Geometry        Cartesian     | Returns the list of the norm and of the argument of the affix of a point (for..    |
+                                                                     |                                                                                    |
+ 072 distance           Toolbox  App   Geometry        Measure       | Calculates the distance between 2 points, or a point and a curve.                  |
+ 073 radius             Toolbox  App   Geometry        Measure       | Returns the radius of a circle.                                                    |
+ 074 perimeter          Toolbox  App   Geometry        Measure       | Returns the perimeter of a polygon or the circumference of a circle.               |
+ 075 area               Toolbox  App   Geometry        Measure       | Returns the area of a circle or polygon. Can also return the area under a curve..  |
+ 076 slope              Toolbox  App   Geometry        Measure       | Returns the slope of the line defined in the argument                              |
+ 077 angle              Toolbox  App   Geometry        Measure       | Returns the measure of a directed angle. The first point is taken as the vertex..  |
+ 078 arcLen             Toolbox  App   Geometry        Measure       | Returns the length of the arc of a curve between two points on the curve. The..    |
+                                                                     |                                                                                    |
+ 079 is_collinear       Toolbox  App   Geometry        Tests         | Takes a set of points as argument and tests whether or not they are collinear...   |
+ 080 is_concyclic       Toolbox  App   Geometry        Tests         | Takes a set of points as argument and tests if they are all on the same circle...  |
+ 081 is_element         Toolbox  App   Geometry        Tests         | Tests if a point is on a geometric object. Returns 1 if it is and 0 otherwise      |
+ 082 is_orthogonal      Toolbox  App   Geometry        Tests         | Tests whether or not two lines or two circles are orthogonal (perpendicular). In.. |
+ 083 is_perpendicular   Toolbox  App   Geometry        Tests         | Similar to is_orthogonal. Tests whether or not two lines are perpendicular...      |
+ 084 is_isosceles       Toolbox  App   Geometry        Tests         | Takes three points and tests whether or not they are vertices of a single..        |
+ 085 is_equilateral     Toolbox  App   Geometry        Tests         | Takes three points and tests whether or not they are vertices of a single..        |
+ 086 is_parallelogram   Toolbox  App   Geometry        Tests         | Tests whether or not a set of four points are vertices of a parallelogram...       |
+ 087 is_conjugate       Toolbox  App   Geometry        Tests         | Returns 1 if the 3 (resp 4) arguments are conjugated toward a circle (resp 2..     |
+                                                                     |                                                                                    |
+                        Apps  Geometry Cmds                          | << alternative location <<                                                         |
+                                                                     |                                                                                    |
+ 417 plotfunc           Toolbox  CAS   Plot                          |                                                                                    |
+ 418 plotparam          Toolbox  CAS   Plot                          |                                                                                    |
+ 419 plotpolar          Toolbox  CAS   Plot                          |                                                                                    |
+ 420 plotseq            Toolbox  CAS   Plot                          |                                                                                    |
+ 421 plotimplicit       Toolbox  CAS   Plot                          |                                                                                    |
+ 422 plotfield          Toolbox  CAS   Plot                          |                                                                                    |
+ 423 plotode            Toolbox  CAS   Plot                          |                                                                                    |
+ 424 plotcontour        Toolbox  CAS   Plot                          | Draws 11 contour-lines z=z_min,,...z=z_max of the surface z=Xpr, where the..       |
+                                                                     |                                                                                    |
+     is_coplanar                                                     | Tests if 4 points are in the same plane. Returns 1 if true or 0 if false.          |
+     is_harmonic                                                     | Returns 1 if the 4 points are in a harmonic division and 0 otherwise.              |
+     is_harmonic_circle_bundle                                       | Returns 1 if the circles build a bundle, 2 if they have the same center, 3 if..    |
+     is_harmonic_line_bundle                                         | Returns 1 if the lines have a common point, 2 if they are parallels, 3 if they..   |
+     is_parallel                                                     | Tests whether or not two lines are parallel. Returns 1 if they are and 0..         |
+     is_rectangle                                                    | Tests whether or not a set of four points are vertices of a rectangle. Returns 0.. |
+     is_rhombus                                                      | Returns 1 or 2 if the 4 points (or the object) build a rhombus (2 for a square)..  |
+     is_square                                                       | Tests whether or not a set of four points are vertices of a square. Returns 1 if.. |
+     isobarycenter                                                   | Returns the hypothetical center of mass of a set of points. Works like..           |
+                                                                     |                                                                                    |
+     angleat                                                         | Used in Symbolic view. Given the three points of an angle and a fourth point as..  |
+     angleatraw                                                      | angleatraw(A,B,C,z0) displays at point(z0), the value of the measure of the..      |
+     distance2                                                       | Returns the square of the distance between two points or between a point and a..   |
+     distanceat                                                      | distanceat(A,B,z0) displays at point(z0), with a legend, the distance between 2..  |
+     distanceatraw                                                   | This command is used in Symbolic view. Similar to distanceat(), this commmand..    |
+     extract_measure                                                 | Returns the definition of a geometric object. For a point, that definition..       |
+     rectangular_coordinates                                         | Returns the list of the abscissa and of the ordinate of a point given by the..     |
+     trace                                                           | Begins tracing the specified point.                                                |
+                                                                     |                                                                                    |
+     areaat                                                          | Displays at point(z0), with a legend, algebraic area of a circle or of a (star)..  |
+     areaatraw                                                       | Displays at point(z0), algebraic area of a circle or of a (star-)polygon (e.g...   |
+     hexagon                                                         | Draws a regular hexagon defined by one of its sides; that is, by two consecutive.. |
+     equilateral_triangle                                            | Draws an equilateral triangle defined by one of its sides; that is, by two..       |
+     DrawSlp                                                         | Given three real numbers m, a, b, draws a line with slope m that passes through..  |
+     polygonplot                                                     | Draws the polygons joining for j fixed and for k=0..nrows, the points (xk,yk)..    |
+     polygonscatterplot                                              | Draws the points (xk,yk) and the polygons joining for j fixed and for..            |
+     plotinequation                                                  | Shows the graph of the solution of inequations with 2 variables.                   |
+     point2d                                                         | Randomly re-distributes a set of points such that, for each point, x is in the..   |
+     polar                                                           | Returns the line of the conjugated points of A with respect to the circle.         |
+     polar_point                                                     | Returns the point (for 2D) with the arguments r and t as polar coordinates.        |
+     pole                                                            | Returns the point having the line as polar with respect to the circle.             |
+     LineHorz                                                        | Draws the horizontal line y=a                                                      |
+     LineTan                                                         | Draws the tangent to y=f(x) at x=Value.                                            |
+     LineVert                                                        | Draws the vertical line x=a                                                        |
+                                                                     |                                                                                    |
+     barycenter                                                      | Calculates the hypothetical center of mass of a set of points, each with a given.. |
+     common_perpendicular                                            | Draws the common perpendicular of the lines D1 and D2.                             |
+     convexhull                                                      | Convex hull of a list of 2D points.                                                |
+     division_point                                                  | For two points A and B, and a numerical factor k, returns a point C such that..    |
+     exbisector                                                      | Given three points that define a triangle, creates the bisector of the exterior..  |
+     orthocenter                                                     | Returns the orthocenter of a triangle; that is, the intersection of the three..    |
+     harmonic_conjugate                                              | Returns the harmonic conjugate of 3 points or of 3 parallel or concurrent lines..  |
+     harmonic_division                                               | Returns the 4 points (resp lines) and affects the last argument, such as the 4..   |
+     open_polygon                                                    | Returns and draws the polygonal line where its vertices are the element of l.      |
+     perimeterat                                                     | Displays at point(z0), with a legend, the perimeter of a circle or of a polygon..  |
+     perimeteratraw                                                  | Displays at point(z0), the perimeter of a circle or of a polygon (e.g. triangle,.. |
+     powerpc                                                         | Returns the real number d^2-R^2 (d=distance between point and center, R=radius).   |
+     radical_axis                                                    | Returns the line of points with same powerpc with respect to the 2 circles.        |
+     slopeat                                                         | Displays, with a legend, the value of the slope of the segment, ray, or line..     |
+     slopeatraw                                                      | slopeatraw(d,z0) displays the value of the slope of the line or segment d at..     |
+     spline                                                          | Returns the natural spline through the points given by lx and ly, variable x,..    |
+                                                                     |                                                                                    |
+     blue                                                            | For example, suppose you have drawn a circle in the Geometry app. In Symbolic..    |
+     cyan                                                            | For example, suppose you have drawn a circle in the Geometry app. In Symbolic..    |
+     green                                                           | For example, suppose you have drawn a circle in the Geometry app. In Symbolic..    |
+     magenta                                                         | For example, suppose you have drawn a circle in the Geometry app. In Symbolic..    |
+     red                                                             | For example, suppose you have drawn a circle in the Geometry app. In Symbolic..    |
+     white                                                           | Option of the display command to display with color.                               |
+     yellow                                                          |                                                                                    |
+                                                                                                                                                          |
+     ========================= 5. Statistics =======================                                                                                      |
+                                                                                                                                                          |
+                        Apps     Spreadsheet Menu                    | >> alternative location >>                                                         |
+                                                                     |                                                                                    |
+ 088 SUM                Toolbox  App   Spreadsheet                   |                                                                                    |
+ 089 AVERAGE            Toolbox  App   Spreadsheet                   |                                                                                    |
+ 090 AMORT              Toolbox  App   Spreadsheet                   |                                                                                    |
+ 091 STAT1              Toolbox  App   Spreadsheet                   |                                                                                    |
+ 092 STAT2              Toolbox  App   Spreadsheet                   |                                                                                    |
+ 093 REGRS              Toolbox  App   Spreadsheet                   |                                                                                    |
+ 094 PredY              Toolbox  App   Spreadsheet                   |                                                                                    |
+ 095 PredX              Toolbox  App   Spreadsheet                   |                                                                                    |
+ 096 HypZ1mean          Toolbox  App   Spreadsheet                   |                                                                                    |
+ 097 HypZ2mean          Toolbox  App   Spreadsheet                   |                                                                                    |
+ 098 HypZ1prop          Toolbox  App   Spreadsheet                   |                                                                                    |
+ 099 HypZ2prop          Toolbox  App   Spreadsheet                   |                                                                                    |
+ 100 HypT1mean          Toolbox  App   Spreadsheet                   |                                                                                    |
+ 101 HypT2mean          Toolbox  App   Spreadsheet                   |                                                                                    |
+ 102 ConfZ1mean         Toolbox  App   Spreadsheet                   |                                                                                    |
+ 103 ConfZ2mean         Toolbox  App   Spreadsheet                   |                                                                                    |
+ 104 ConfZ1prop         Toolbox  App   Spreadsheet                   |                                                                                    |
+ 105 ConfZ2prop         Toolbox  App   Spreadsheet                   |                                                                                    |
+ 106 ConfT1mean         Toolbox  App   Spreadsheet                   |                                                                                    |
+ 107 ConfT2mean         Toolbox  App   Spreadsheet                   |                                                                                    |
+ 108 CellHasData        Toolbox  App   Spreadsheet                   |                                                                                    |
+ 109 ClearCell          Toolbox  App   Spreadsheet                   |                                                                                    |
+                                                                     |                                                                                    |
+                        Apps     Spreadsheet Menu                    | << alternative location <<                                                         |
+                                                                     |                                                                                    |
+ 110 Do1VStats          Toolbox  App   Statistics 1Var               |                                                                                    |
+ 111 SetFreq            Toolbox  App   Statistics 1Var               |                                                                                    |
+ 112 SetSample          Toolbox  App   Statistics 1Var               |                                                                                    |
+                                                                     |                                                                                    |
+ 113 PredX              Toolbox  App   Statistics 2Var               |                                                                                    |
+ 114 PredY              Toolbox  App   Statistics 2Var               |                                                                                    |
+ 115 residue            Toolbox  App   Statistics 2Var               | Returns the residue in a of the expression Expr with v as variable                 |
+ 116 Do2VStats          Toolbox  App   Statistics 2Var               |                                                                                    |
+ 117 SetDepend          Toolbox  App   Statistics 2Var               |                                                                                    |
+ 118 SetIndep           Toolbox  App   Statistics 2Var               |                                                                                    |
+                                                                     |                                                                                    |
+ 119 DoInference        Toolbox  App   Inference                     |                                                                                    |
+ 120 HypZ1mean          Toolbox  App   Inference                     |                                                                                    |
+ 121 HypZ2mean          Toolbox  App   Inference                     |                                                                                    |
+ 122 HypZ1prop          Toolbox  App   Inference                     |                                                                                    |
+ 123 HypZ2prop          Toolbox  App   Inference                     |                                                                                    |
+ 124 HypT1mean          Toolbox  App   Inference                     |                                                                                    |
+ 125 HypT2mean          Toolbox  App   Inference                     |                                                                                    |
+ 126 ConfZ1mean         Toolbox  App   Inference                     |                                                                                    |
+ 127 ConfZ2mean         Toolbox  App   Inference                     |                                                                                    |
+ 128 ConfZ1prop         Toolbox  App   Inference                     |                                                                                    |
+ 129 ConfZ2prop         Toolbox  App   Inference                     |                                                                                    |
+ 130 ConfT1mean         Toolbox  App   Inference                     |                                                                                    |
+ 131 ConfT2mean         Toolbox  App   Inference                     |                                                                                    |
+ 132 Chi2GOF            Toolbox  App   Inference                     |                                                                                    |
+ 133 Chi2TwoWay         Toolbox  App   Inference                     |                                                                                    |
+ 134 LinRegrTTest       Toolbox  App   Inference                     |                                                                                    |
+ 135 LinRegrTConfSlope  Toolbox  App   Inference                     |                                                                                    |
+ 136 LinRegrTConfInt    Toolbox  App   Inference                     |                                                                                    |
+ 137 LinRegrTMeanResp   Toolbox  App   Inference                     |                                                                                    |
+ 138 LinRegrTPredInt    Toolbox  App   Inference                     |                                                                                    |
+ 139 AnovaOneWay        Toolbox  App   Inference                     |                                                                                    |
+                                                                     |                                                                                    |
+     correlation                                                     | Returns the correlation of the elements of its argument.                           |
+     covariance                                                      | Returns the covariance of the elements of its argument.                            |
+     covariance_correlation                                          | Returns the list of the covariance and the correlation of the elements of its..    |
+ +++ chisquaret                                                      | test of equality between 2 (or n) samples, or between 1 sample and distribution_law|
+     factorial                                                       | factorial(n)=n!. For non-integers, factorial(a)=a! = G(a + 1). This calculates..   |
+     mean                                                            | Mean of a list with the second argument as weight, or of the columns of a..        |
+     median                                                          | Returns the median of a list with the second argument as the weight, or of the..   |
+     stddev                                                          | Returns the standard deviation of the elements in a list or of the list of..       |
+     stddevp                                                         | Returns the population standard eviation of the elements of a list with the..      |
+     variance                                                        | Returns the variance of a list with the second argument as the weight, or the..    |
+                                                                     |                                                                                    |
+     power_regression                                                | Returns the coefficients (m,b) of y=b*x^m: it is the best monomial that..          |
+     polynomial_regression                                           | Returns the coefficients (an,...a1,a0) of y=an*x^n+..a1x+a0): it is the best..     |
+     exponential_regression                                          | Returns the coefficients (a,b) of y=b*a^x : it is the best exponential that..      |
+     linear_regression                                               | Returns the coefficients a and b of y=a*x+b It is the best line approximation..    |
+     logarithmic_regression                                          | Returns the coefficients a and b of y=a*ln(x)+b : it is the best logarithm that..  |
+     logistic_regression                                             | Returns y,y',C,y'max,xmax,R : y is a logistic function (sol of y'/y=a*y+b), such.. |
+                                                                     |                                                                                    |
+     quantile                                                        | Returns the quantile of the elements of l corresponding to p (0<p<1)               |
+     quartile1                                                       | Returns the 1st quartile of the elements (or of the columns) of the argument.      |
+     quartile3                                                       | Returns the 3rd quartile of the elements (or of the columns) of the argument       |
+     quartiles                                                       | Returns the min, 1st quartile, median, 3rd quartile, and max of the elements (or.. |
+                                                                                                                                                          |
+     ========================= 6. Probabiity =======================                                                                                      |
+                                                                                                                                                          |
+ 221 !                  Toolbox  Math  Probabiity                    | Factorial. Returns the factorial of a positive integer. For non-integers, ! =..    |
+ 222 COMB               Toolbox  Math  Probabiity                    | Combinations. Returns the number of combinations (without regard to order) of n..  |
+ 223 PERM               Toolbox  Math  Probabiity                    | Permutations. Returns the number of permutations (with regard to order) of n..     |
+                                                                     |                                                                                    |
+ 224 RANDOM             Toolbox  Math  Probabiity      Random        | Random number. Returns a pseudo-random number generated using a seed value, and..  |
+ 225 RANDINT            Toolbox  Math  Probabiity      Random        | Random number. Returns a pseudo-random integer generated using a seed value, and.. |
+ 226 RANDNORM           Toolbox  Math  Probabiity      Random        | Return a random number from the normal distribution with the specified mean µ..    |
+ 227 RANDSEED           Toolbox  Math  Probabiity      Random        | Sets the random number generator seed. With no input, uses current time value as.. |
+                                                                     |                                                                                    |
+ 228 NORMALD            Toolbox  Math  Probabiity      Density       | Normal probability density function. Computes the probability density at the..     |
+ 229 STUDENT            Toolbox  Math  Probabiity      Density       | Student?s t probability density function. Computes the probability density of..    |
+ 230 CHISQUARE          Toolbox  Math  Probabiity      Density       | Chi-square probability density function. Computes the probability density of the.. |
+ 231 FISHER             Toolbox  Math  Probabiity      Density       | F (Fisher or Fisher-Snedecor) probability density function. Computes the..         |
+ 232 BINOMIAL           Toolbox  Math  Probabiity      Density       | Binomial probability density function. Computes the probability of k successes..   |
+ 233 GEOMETRIC          Toolbox  Math  Probabiity      Density       |                                                                                    |
+ 234 POISSON            Toolbox  Math  Probabiity      Density       | Poisson probability mass function. Computes the probability of k occurrences of..  |
+                                                                     |                                                                                    |
+ 235 NORMALD_CDF        Toolbox  Math  Probabiity      Cumulative    | Cumulative normal distribution function. Returns the lower-tail probability of..   |
+ 236 STUDENT_CDF        Toolbox  Math  Probabiity      Cumulative    | Cumulative Student?s t distribution function. Returns the lower-tail probability.. |
+ 237 CHISQUARE_CDF      Toolbox  Math  Probabiity      Cumulative    | Cumulative ?² (Chi-squared) distribution function. Returns the lower-tail..        |
+ 238 FISHER_CDF         Toolbox  Math  Probabiity      Cumulative    | Cumulative F (Fisher or Fisher-Snedecor) distribution function. Returns the..      |
+ 239 BINOMIAL_CDF       Toolbox  Math  Probabiity      Cumulative    | Cumulative binomial distribution function. Returns the probability of k or..       |
+ 240 geometric_cdf      Toolbox  Math  Probabiity      Cumulative    |                                                                                    |
+ 241 POISSON_CDF        Toolbox  Math  Probabiity      Cumulative    | Cumulative poisson distribution function. Returns the probability of x or fewer..  |
+                                                                     |                                                                                    |
+ 242 NORMALD_ICDF       Toolbox  Math  Probabiity      Inverse       | Inverse cumulative normal distribution function. Returns the cumulative normal..   |
+ 243 STUDENT_ICDF       Toolbox  Math  Probabiity      Inverse       | Inverse cumulative Student?s t distribution function. Returns the value x such..   |
+ 244 CHISQUARE_ICDF     Toolbox  Math  Probabiity      Inverse       | Inverse cumulative ?² (Chi-squared) distribution function. Returns the value x..   |
+ 245 FISHER_ICDF        Toolbox  Math  Probabiity      Inverse       | Inverse cumulative F (Fisher or Fisher-Snedecor) distribution function. Returns..  |
+ 246 BINOMIAL_ICDF      Toolbox  Math  Probabiity      Inverse       | Inverse cumulative binomial distribution function. Returns the number of..         |
+ 247 geometric_icdf     Toolbox  Math  Probabiity      Inverse       |                                                                                    |
+ 248 POISSON_ICDF       Toolbox  Math  Probabiity      Inverse       | Inverse cumulative poisson distribution function. Returns the value x such that..  |
+                                                                     |                                                                                    |
+     randexp                                                         | Returns a random real according to the exponential distribution of parameter a>0   |
+ +++ randbinomial                                                    | Returns a random integer with binomial distribution given n trials, each with prob |
+ +++ randchisquare                                                   | Returns a random number with ?² distribution given n degrees of freedom.           |
+ +++ randfisher                                                      | Returns a random number with F distribution given numerator n and denom degrees    |
+ +++ randgeometric                                                   | Returns a random integer with geometric distribution given given probability p.    |
+ +++ randperm                                                        | Given a positive integer, returns a random permutation of [1,2,…,n].               |
+ +++ randpoisson                                                     | Returns a random integer with Poisson distribution given k.                        |
+ +++ randstudent                                                     | Returns a random number with Student’s t distribution given n degrees of freedom.  |
+ +++ randvector                                                      | Returns a vector of size Integern that contains random integers in the range -99 ..|
+                                                                     |                                                                                    |
+ +++ betad                                                           | Beta probability density function                                                  |
+ +++ betad_cdf                                                       | Returns the lower-tail probability of the beta probability density function..      |
+ +++ betad_icdf                                                      | Returns the value x such that the beta lower-tail probability of x, given ..       |
+ +++ cauchy                                                          | Cauchy probability density function                                                |
+ +++ cauchy_cdf                                                      | Returns the lower-tail probability of the Cauchy probability density function..    |
+ +++ cauchy_icdf                                                     | Returns the value x such that the Cauchy lower-tail probability of x, given..      |
+ +++ exponential                                                     | Exponential probability density function                                           |
+ +++ exponential_cdf                                                 | Returns the lower-tail probability of the exponential probability density function |
+ +++ exponential_icdf                                                | Inverse cumulative exponential distribution function                               |
+ +++ gammad                                                          | Gamma probability density function                                                 |
+ +++ gammad_cdf                                                      | Cumulative gamma distribution function                                             |
+ +++ gammad_icdf                                                     | Inverse cumulative gamma distribution function                                     |
+ +++ negbinomial                                                     | Negative binomial probability density function                                     |
+ +++ negbinomial_cdf                                                 | Cumulative negative binomial distribution function                                 |
+ +++ negbinomial_icdf                                                | Inverse cumulative negative binomial distribution function                         |
+ +++ uniform                                                         | Uniform probability density function                                               |
+ +++ uniform_cdf                                                     | Cumulative uniform distribution function                                           |
+ +++ uniform_icdf                                                    | Inverse cumulative uniform distribution function                                   |
+ +++ weibull                                                         | Weibull probability density function                                               |
+ +++ weibull_cdf                                                     | Cumulative Weibull distribution function                                           |
+ +++ weibull_icdf                                                    | Inverse cumulative Weibull distribution function                                   |
+ +++ wilcoxonp                                                       | Distribution of the Wilcoxon or Mann-Whitney test for one or two samples.          |
+ +++ wilcoxons                                                       | Rank statistic of Wilcoxon or Mann-Whitney test for 1 sample (List1) and Median..  |
+ +++ wilcoxons                                                       | Wilcoxon or Mann-Whitney test for 1 sample (List1) and Median, or 2 samples  (L..  |
+                                                                     |                                                                                    |
+     signature                                                       | Returns the signature of a permutation                                             |
+                                                                     |                                                                                    |
+ +++ cycle2perm                                                      | Converts cycle to a permutation.                                                   |
+ +++ cycleinv                                                        | Returns the inverse cycle of cycle.                                                |
+ +++ cycles2permu                                                    | Convert a product of cycles into a permutation.                                    |
+ +++ groupermu                                                       | Returns the group of permutations generated by permutation1 and permutation2.      |
+                                                                     |                                                                                    |
+ +++ perminv                                                         | Returns the inverse permutation of permutation.                                    |
+ +++ permu2cycles                                                    | Converts permutation to a product of disjoined cycles.                             |
+ +++ permu2mat                                                       | Returns the matrix where the rows of the identity matrix are permuted with permut  |
+ +++ permuorder                                                      | Permutation Order                                                                  |
+                                                                     |                                                                                    |
+ +++ c1oc2                                                           | Returns the permutation product of cycle1 and cycle2.                              |
+ +++ c1op2                                                           | Returns the permutation product of cycle and permutation.                          |
+ +++ p1oc2                                                           | Returns the permutation product of permutation and cycle.                          |
+ +++ p1op2                                                           | Returns the permutation product of permutation1 and permutation2.                  |
+                                                                                                                                                          |
+     ========================= 7. Finance ==========================                                                                                      |
+                                                                                                                                                          |
+ 150 TvmNbPmt           Toolbox  App   Finance         TMV           |                                                                                    |
+ 151 TvmIPYR            Toolbox  App   Finance         TMV           |                                                                                    |
+ 152 TvmPV              Toolbox  App   Finance         TMV           |                                                                                    |
+ 153 TvmPMT             Toolbox  App   Finance         TMV           |                                                                                    |
+ 154 TvmFV              Toolbox  App   Finance         TMV           |                                                                                    |
+                                                                     |                                                                                    |
+ 155 IntConvNom         Toolbox  App   Finance    Interest conversion|                                                                                    |
+ 156 IntConvEff         Toolbox  App   Finance    Interest conversion|                                                                                    |
+ 157 IntConvCPYR        Toolbox  App   Finance    Interest conversion|                                                                                    |
+                                                                     |                                                                                    |
+ 158 DateDays           Toolbox  App   Finance       Date calculation|                                                                                    |
+                                                                     |                                                                                    |
+ 159 CashFlowIRR        Toolbox  App   Finance         Cash flow     |                                                                                    |
+ 160 CashFlowMIRR       Toolbox  App   Finance         Cash flow     |                                                                                    |
+ 161 CashFlowFMRR       Toolbox  App   Finance         Cash flow     |                                                                                    |
+ 162 CashFlowTotal      Toolbox  App   Finance         Cash flow     |                                                                                    |
+ 163 CashFlowNPV        Toolbox  App   Finance         Cash flow     |                                                                                    |
+ 164 CashFlowNFV        Toolbox  App   Finance         Cash flow     |                                                                                    |
+ 165 CashFlowNUS        Toolbox  App   Finance         Cash flow     |                                                                                    |
+ 166 CashFlowPB         Toolbox  App   Finance         Cash flow     |                                                                                    |
+                                                                     |                                                                                    |
+ 167 Depreciate         Toolbox  App   Finance         Depreciation  |                                                                                    |
+                                                                     |                                                                                    |
+ 168 BrkEvFixed         Toolbox  App   Finance         Break-even    |                                                                                    |
+ 169 BrkEvCost          Toolbox  App   Finance         Break-even    |                                                                                    |
+ 170 BrkEvPrice         Toolbox  App   Finance         Break-even    |                                                                                    |
+ 171 BrkEvProfit        Toolbox  App   Finance         Break-even    |                                                                                    |
+ 172 BrkEvQuant         Toolbox  App   Finance         Break-even    |                                                                                    |
+                                                                     |                                                                                    |
+ 173 ChangePrice        Toolbox  App   Finance         Percent change|                                                                                    |
+ 174 ChangeCost         Toolbox  App   Finance         Percent change|                                                                                    |
+ 175 PercentMargin      Toolbox  App   Finance         Percent change|                                                                                    |
+ 176 PercentMarkup      Toolbox  App   Finance         Percent change|                                                                                    |
+ 177 ChangeOld          Toolbox  App   Finance         Percent change|                                                                                    |
+ 178 ChangeNew          Toolbox  App   Finance         Percent change|                                                                                    |
+ 179 PercentTotal       Toolbox  App   Finance         Percent change|                                                                                    |
+ 180 PercentChange      Toolbox  App   Finance         Percent change|                                                                                    |
+                                                                     |                                                                                    |
+ 181 BondYield          Toolbox  App   Finance         Bond          |                                                                                    |
+ 182 BondPrice          Toolbox  App   Finance         Bond          |                                                                                    |
+                                                                     |                                                                                    |
+ 183 BlackScholes       Toolbox  App   Finance         Black-Scholes | For example, suppose you have drawn a circle in the Geometry app. In Symbolic..    |
+                                                                                                                                                          |
+     ========================= 8. Solving ==========================                                                                                      |
+                                                                                                                                                          |
+ 000 AREA               Toolbox  App   Function                      |                                                                                    |
+ 001 EXTREMUM           Toolbox  App   Function                      |                                                                                    |
+ 002 ISECT              Toolbox  App   Function                      |                                                                                    |
+ 003 ROOT               Toolbox  App   Function                      |                                                                                    |
+ 004 SLOPE              Toolbox  App   Function                      |                                                                                    |
+                                                                     |                                                                                    |
+ 140 Solve2×2           Toolbox  App   Linear Solver                 |                                                                                    |
+ 141 Solve3×3           Toolbox  App   Linear Solver                 |                                                                                    |
+ 142 LinSolve           Toolbox  App   Linear Solver                 |                                                                                    |
+                                                                     |                                                                                    |
+ 143 Solve              Toolbox  App   Solve                         |                                                                                    |
+                                                                     |                                                                                    |
+ 144 AAS                Toolbox  App   Triangle Solver               |                                                                                    |
+ 145 ASA                Toolbox  App   Triangle Solver               |                                                                                    |
+ 146 SAS                Toolbox  App   Triangle Solver               |                                                                                    |
+ 147 SSA                Toolbox  App   Triangle Solver               |                                                                                    |
+ 148 SSS                Toolbox  App   Triangle Solver               |                                                                                    |
+ 149 DoSolve            Toolbox  App   Triangle Solver               |                                                                                    |
+                                                                     |                                                                                    |
+ 184 LinearSlope        Toolbox  App   Explorer                      |                                                                                    |
+ 185 LinearYIntercept   Toolbox  App   Explorer                      |                                                                                    |
+ 186 QuadSolve          Toolbox  App   Explorer                      |                                                                                    |
+ 187 QuadDelta          Toolbox  App   Explorer                      |                                                                                    |
+                                                                     |                                                                                    |
+ 199 FNROOT             Toolbox  Math  Arithmetic                    | Function root-finder (like the Solve app). Finds the value for variable at which.. |
+                                                                     |                                                                                    |
+ 341 solve              Toolbox  CAS   Solve                         | Solves a polynomial equation or a set of polynomial equations.                     |
+ 342 zeros              Toolbox  CAS   Solve                         | Returns the zeros (reals or complex according to the CAS settings) of the..        |
+ 343 cSolve             Toolbox  CAS   Solve                         | Returns the solutions, including comlex solutions, of Eq, for Var. If Eq is an..   |
+ 344 cZeros             Toolbox  CAS   Solve                         | Returns the roots, including complex roots, of Expr (that is, the solution of..    |
+ 345 fsolve             Toolbox  CAS   Solve                         | Numerical solution of an equation or a system of equations.                        |
+ 346 desolve            Toolbox  CAS   Solve                         | Solves a differential equation.                                                    |
+ 347 odesolve           Toolbox  CAS   Solve                         | Ordinary Differential Equation solver. Solves an ordinary differential equation..  |
+ 348 linsolve           Toolbox  CAS   Solve                         | Linear equations system solver. Solves a set of linear equations for their..       |
+                                                                     |                                                                                    |
+ 312 simplify           Toolbox  CAS   Algebra                       | Simplifies an expression.                                                          |
+ 313 collect            Toolbox  CAS   Algebra                       | Collects likes terms in a polynomial expression (or of a list of polynomial..      |
+ 314 expand             Toolbox  CAS   Algebra                       | Full distribution of multiplication and division over addition and subtraction.    |
+ 315 factor             Toolbox  CAS   Algebra                       | Factorizes a polynomial.                                                           |
+ 316 partfrac           Toolbox  CAS   Algebra                       | Performs partial fraction decomposition on a fraction.                             |
+ 317 subst              Toolbox  CAS   Algebra                       | Substitutes a value for a variable in an expression.                               |
+                                                                     |                                                                                    |
+     nSolve                                                          | Returns a numerical solution of an equation or a system of equations.              |
+     froot                                                           | Returns the list of roots and poles of F with their mulitiplicity.                 |
+     rsolve                                                          | Gives the value of a recurrent sequence or of a system of recurrent sequences      |
+     seq                                                             | Returns the sequence (if 2 or 3 arguments) or the list (if 4 or 5 arguments)..     |
+     seqsolve                                                        | Gives the value of a recurrent sequence (u_{n+1}=f(u_n) or..                       |
+ +++ newton                                                          | Uses Newton's method to estimate the root of a function, beginning with Guess..    |
+                                                                     |                                                                                    |
+     complexroot                                                     | Returns the list of the vertices of the squares (side<=l) containing roots of..    |
+     crationalroot                                                   | Returns the list of complex rational roots of P without indicating the..           |
+     POLYROOT                                                        | Polynomial roots. Returns the roots for the polynomial whose coefficients are..    |
+                                                                     |                                                                                    |
+     approx                                                          | Numerical evaluation of the first argument (we can give the number of digits as..  |
+     exact                                                           | Converts the expression to a rational or real expression.                          |
+     normal                                                          | Simplify the expression.                                                           |
+     propfrac                                                        | Simplifies and writes the fraction (or rationnal fraction) A/B as Q+R/B with..     |
+ +++ QPI                                                             | QPI attempts to approximate expr into p/q, (a/b)*v(p/q), (p/q)*p, ln(p/q) e^(p/q)  |
+     ratnormal                                                       | Rewrites Expr as an irreducible rational fraction                                  |
+ +++ regroup                                                         | Collect terms in an expression. This is equivalent to the auto simplication ..     |
+ +++ simplex_reduce                                                  | Reduction by simplex algorithm to find max(c.x) under A.x<=b and x>=0, b>=0..      |
+     trunc                                                           | Truncates a value to n decimal places (by default n=0).Accepts complex numbers.    |
+     tsimplify                                                       | Returns an expression with transcendentals rewritten as complex exponentials       |
+                                                                     |                                                                                    |
+ +++ tabvar                                                          | Creates a table of variation for function. Textual Analysis is displayed.          |
+ +++ domain                                                          | Returns the domain of variable in function. If not given, variable is assumed to x.|
+                                                                                                                                                          |
+     ========================= 9. Calculus =========================                                                                                      |
+                                                                                                                                                          |
+ 322 diff               Toolbox  CAS   Calculus                      | Returns the derivative of an expression with respect to a given variable. You..    |
+ 323 limit              Toolbox  CAS   Calculus                      | Limit of an expression as a variable approaches a value. Returns the limit (2..    |
+ 324 int                Toolbox  CAS   Calculus                      | Integral (definite or indefinite). You can specify a variable of integration as..  |
+ 325 series             Toolbox  CAS   Calculus                      | Returns the series expansion of an expression in the vicinity of a given..         |
+ 326 sum                Toolbox  CAS   Calculus                      | Returns the discrete sum of Expr with respect to the variable Var from Real1 to..  |
+                                                                     |                                                                                    |
+ 327 curl               Toolbox  CAS   Calculus        Differential  | Returns the curl of a vector...                                                    |
+ 328 divergence         Toolbox  CAS   Calculus        Differential  | Returns the divergence of a vector...                                              |
+ 329 grad               Toolbox  CAS   Calculus        Differential  | Returns the gradient of the expression Expr.                                       |
+ 330 hessian            Toolbox  CAS   Calculus        Differential  | Returns the hessian matrix of the expression Expr.                                 |
+                                                                     |                                                                                    |
+ 331 ibpdv              Toolbox  CAS   Calculus        Integral      | Integration by parts of Expr1=u(Var)*v'(Var) with Expr2= v'(Var) (or 0) as 2nd..   |
+ 332 ibpu               Toolbox  CAS   Calculus        Integral      | Integration by parts of Expr1=u(Var)*v'(Var) with Expr2= u(Var) (or 0) as 2nd..    |
+ 333 preval             Toolbox  CAS   Calculus        Integral      | Returns f(Real2)-f(Real1).                                                         |
+                                                                     |                                                                                    |
+ 334 taylor             Toolbox  CAS   Calculus        Limits        | Returns the Taylor series expansion of an expression at a point or at infinity..   |
+ 335 divpc              Toolbox  CAS   Calculus        Limits        | Returns the n-degree Taylor polynomial for the quotient of 2 polynomials.          |
+ 336 sum_riemann        Toolbox  CAS   Calculus        Limits        | Returns, in the neighbourhood of n=8, an equivalent of the sum of..                |
+                                                                     |                                                                                    |
+ 337 laplace            Toolbox  CAS   Calculus        Transform     | Returns the Laplace transform of Expr.                                             |
+ 338 ilaplace           Toolbox  CAS   Calculus        Transform     | Inverse Laplace transform of a rational fraction.                                  |
+ 339 fft                Toolbox  CAS   Calculus        Transform     | Fast Fourier Transform in R or in the field Z/pZ, with a as primitive n-th root..  |
+ 340 ifft               Toolbox  CAS   Calculus        Transform     | Inverse Fast Fourier Transform.                                                    |
+                                                                     |                                                                                    |
+ +++ fourier_an                                                      | Returns the nth Fourier coefficient an=2/T*?(f(x)*cos(2*pi*n*x/T),a,a+T).          |
+ +++ fourier_bn                                                      | Returns the nth Fourier coefficient bn=2/T*?(f(x)*sin(2*pi*n*x/T),a,a+T).          |
+ +++ fourier_cn                                                      | Returns the nth Fourier coefficient cn=1/T*?(f(x)*exp(-2*i*pi*n*x/T),a,a+T).       |
+     invlaplace                                                      | Returns the inverse Laplace transform of Expr.                                     |
+     invztrans                                                       | Inverse z transform of a rational fraction.                                        |
+     laplacian                                                       | Returns the Laplacian of the expression Xpr with respect to the list of..          |
+     ztrans                                                          | Z transform of a sequence.                                                         |
+                                                                     |                                                                                    |
+     lin                                                             | Linearization of exponentials.                                                     |
+     order_size                                                      | Remainder (O term) of a series expansion: limit(x^a*order_size(x),x=0)=0 if a>0    |
+                                                                     |                                                                                    |
+     function_diff                                                   | Returns the derivative function of the function f.                                 |
+ +++ implicit_diff                                                   | Returns the implicit derivative of expression with respect to var1,  var2.         |
+     nDeriv                                                          | Returns an approximation of the derivative number at a..                           |
+                                                                                                                                                          | 
+    ========================== 10. Numbers =========================                                                                                      |
+                                                                                                                                                          |
+ 188 CEILING            Toolbox  Math  Numbers                       | Least integer greater than or equal to value.                                      |
+ 189 FLOOR              Toolbox  Math  Numbers                       | Greatest integer less than or equal to value.                                      |
+ 190 IP                 Toolbox  Math  Numbers                       | Integer part. Returns the Integer part of value.                                   |
+ 191 FP                 Toolbox  Math  Numbers                       | Returns the Fractional part of value.                                              |
+ 192 ROUND              Toolbox  Math  Numbers                       | Rounds value to system display settings. If optional places is given, rounds..     |
+ 193 TRUNCATE           Toolbox  Math  Numbers                       | Truncates value to system display settings. If optional places is given,..         |
+ 194 MANT               Toolbox  Math  Numbers                       | Mantissa. Returns the significant digits of value.                                 |
+ 195 XPON               Toolbox  Math  Numbers                       | Exponent. Returns the exponent of value.                                           |
+                                                                     |                                                                                    |
+ 196 MAX                Toolbox  Math  Arithmetic                    | Maximum. Returns the greatest of the values given, or the greatest value of a..    |
+ 197 MIN                Toolbox  Math  Arithmetic                    | Minimum. Returns the lesser of the values given, or the lesser value of a list.    |
+ 198 MOD                Toolbox  Math  Arithmetic                    | Modulo. Returns the remainder of value1/value2.                                    |
+ 200 %                  Toolbox  Math  Arithmetic                    | x percent of y. Returns (x/100)*y.                                                 |
+                                                                     |                                                                                    |
+ 201 ARG                Toolbox  Math  Arithmetic      Complex       | The ARG function finds the angle determined by a complex number.                   |
+ 202 CONJ               Toolbox  Math  Arithmetic      Complex       | Complex Conjugate. Reverses the sign of the imaginary part of a complex number.    |
+ 203 IM                 Toolbox  Math  Arithmetic      Complex       | Imaginary Part. Returns the imaginary part of a complex number.                    |
+ 204 RE                 Toolbox  Math  Arithmetic      Complex       | Real Part. Returns the real part of a complex number.                              |
+ 205 SIGN               Toolbox  Math  Arithmetic      Complex       | Sign. Returns the sign of value. If positive, the result is 1; if negative, -1...  |
+                                                                     |                                                                                    |
+ 206 ALOG               Toolbox  Math  Arithmetic      Exponential   | The common antilogarithm. This is more accurate than 10^x due to limitations of..  |
+ 207 EXPM1              Toolbox  Math  Arithmetic      Exponential   | Exponent minus 1. This is more accurate than EXP when x is close to zero.          |
+ 208 LNP1               Toolbox  Math  Arithmetic      Exponential   | Natural log plus 1. This is more accurate than the natural logarithm function..    |
+                                                                     |                                                                                    |
+ 303 Beta               Toolbox  Math  Special                       | Returns Gamma(x)*Gamma(y)/Gamma(x+y).                                              |
+ 304 erf                Toolbox  Math  Special                       | Returns the approximate value of 2/vp*int(exp(-t^2),t,0,x0)                        |
+ 305 erfc               Toolbox  Math  Special                       | Returns the approximate value of 2/vp*int(exp(-t^2),t,x0,8).                       |
+ 306 Gamma              Toolbox  Math  Special                       | Calculus of Gamma at a point x0 (Gamma(n+1)=n! for n integer).                     |
+ 307 Psi                Toolbox  Math  Special                       | Psi(a,n) returns the nth derivative of the digamma function at x=a..               |
+ 308 Zeta               Toolbox  Math  Special                       | Returns if a>1 sum(1/n^a,n,1,8)                                                    |
+ 309 Ci                 Toolbox  Math  Special                       | Cosine integral int(cos(t)/t,t=-8..x).                                             |
+ 310 Ei                 Toolbox  Math  Special                       | Exponential integral int(exp(t)/t,t=-8..x)                                         |
+ 311 Si                 Toolbox  Math  Special                       | Sine integral int(sin(t)/t,t=0..x)                                                 |
+                                                                     |                                                                                    |
+ 318 denom              Toolbox  CAS   Algebra         Extract       | Simplified Denominator. For the integers a and b, returns the denominator of the.. |
+ 319 numer              Toolbox  CAS   Algebra         Extract       | Simplified Numerator. For the integers a and b, returns the numerator of the..     |
+ 320 left               Toolbox  CAS   Algebra         Extract       |                                                                                    |
+ 321 right              Toolbox  CAS   Algebra         Extract       |                                                                                    |
+                                                                     |                                                                                    |
+ 349 lncollect          Toolbox  CAS   Rewrite                       | Collect logarithms. Applies ln(a)+n*ln(b)=ln(a*b^n) where n is an integer.         |
+ 350 powexpand          Toolbox  CAS   Rewrite                       | Expresses a power in the form of a product.                                        |
+ 351 texpand            Toolbox  CAS   Rewrite                       | Expands a transcendental expression; that is, an expression containing..           |
+                                                                     |                                                                                    |
+ 352 exp2pow            Toolbox  CAS   Rewrite         Exp & Ln      | Transforms an expression of the form exp(n*ln(x)) to x^n.                          |
+ 353 pow2exp            Toolbox  CAS   Rewrite         Exp & Ln      | Converts powers to exponentials. Essentially the inverse of exp2pow.               |
+ 354 exp2trig           Toolbox  CAS   Rewrite         Exp & Ln      | Transforms the complex exponential into sine and cosine.                           |
+ 355 expexpand          Toolbox  CAS   Rewrite         Exp & Ln      | Expands exponentials usinng the identity exp(a*f(x))=(exp(f(x)))^a.                |
+                                                                     |                                                                                    |
+ 374 idivis             Toolbox  CAS   Integer                       | Integer divisors. Returns a list of all the factors of the integer a.              |
+ 375 ifactor            Toolbox  CAS   Integer                       | Prime factorization. Returns the prime factorization of the integer a as a..       |
+ 376 ifactors           Toolbox  CAS   Integer                       | Prime factors. Similar to ifactor, but returns a list of the factors of the..      |
+ 377 igcd               Toolbox  CAS   Integer                       | Greatest common divisor. Returns the integer that is the greatest common divisor.. |
+ 378 lcm                Toolbox  CAS   Integer                       | Returns the lowest common multiple of 2 polynomials of several variables or of 2.. |
+                                                                     |                                                                                    |
+ 379 isPrime            Toolbox  CAS   Integer         Prime         | Prime integer test. Returns true if the integer a is prime; otherwise, returns..   |
+ 380 ithprime           Toolbox  CAS   Integer         Prime         | Nth prime. For the integer n, returns the nth prime number less than..             |
+ 381 nextprime          Toolbox  CAS   Integer         Prime         | Next prime. Returns the next prime number greater than the integer a.              |
+ 382 prevprime          Toolbox  CAS   Integer         Prime         | Previous prime. Returns the previous prime number before the integer a.            |
+ 383 euler              Toolbox  CAS   Integer         Prime         | Euler?s phi (or totient) function. Takes a positive integer x and returns the..    |
+                                                                     |                                                                                    |
+ 384 iquo               Toolbox  CAS   Integer         Division      | Euclidean quotient. Returns the integer quotient when the integer a is divided..   |
+ 385 irem               Toolbox  CAS   Integer         Division      | Euclidean remainder. Returns the integer remainder when the integer a is divided.. |
+ 386 powmod             Toolbox  CAS   Integer         Division      | Power and modulo. For the integers a, n, and p, returns a^n mod p.                 |
+ 387 ichinrem           Toolbox  CAS   Integer         Division      | Integer Chinese Remainder Theorem for two equations. Takes two lists [a, p] and..  |
+                                                                     |                                                                                    |
+     fMax                                                            | Returns the abscissa of the maximum of the expression.                             |
+     fMin                                                            | Returns the abscissa of the minimum of the expression.                             |
+                                                                     |                                                                                    |
+     iPart                                                           | Returns the argument without its fractional part (type=DOM_FLOAT).                 |
+ +++ fPart                                                           | Returns the fractional part of a real number or the fractional parts of a list num |
+                                                                     |                                                                                    |
+     even                                                            | Returns 1 if the integer is even, else returns 0.                                  |
+     odd                                                             | Returns 1 if the integer is odd, otherwise returns 0.                              |
+     count                                                           | Returns f(l[0])+f(l[1])+...+f(l[size(l)-1]).                                       |
+                                                                     |                                                                                    |
+ +++ evalb                                                           | This function will evaluate expression down to a true or false value if possible.  |
+     evalc                                                           | Returns a complex expression simplified with the format real+i*imag                |
+     evalf                                                           | Numerical evaluation of the first argument (we can give the number of digits as..  |
+                                                                     |                                                                                    |
+     Heaviside                                                       | Function equal to 0 if x<0 and 1 if x>=0                                           |
+     Dirac                                                           | Function derivative of Heaviside.                                                  |
+     PIECEWISE                                                       | piecewise-defined function in form (test1, case1, ...)                             |
+                                                                     |                                                                                    |
+     cFactor                                                         | Factorisation of the expression in C (on the Gauss integers if there are more..    |
+     gauss                                                           | Splits a quadratic form as a sum/difference of square.                             |
+     ref                                                             | Performs Gauss reduction of a matrix AX=b (M=A|(-b))                               |
+                                                                     |                                                                                    |
+     jacobi_symbol                                                   | Jacobi symbol.                                                                     |
+     legendre_symbol                                                 | Legendre symbol.                                                                   |
+     mult_c_conjugate                                                | Returns the expression after multiplication by the complex conjugated quantity..   |
+     mult_conjugate                                                  | Returns the expression after multiplication by the conjugated quantity of the..    |
+                                                                     |                                                                                    |
+     a2q                                                             | a2q(A,X)=the quadratic form q associated to A, X=vector of variables.              |
+     q2a                                                             | q2a(q(x,y),[x,y]) returns the symmetric matrix associated with the quadratic..     |
+     chinrem                                                         | Chinese remainder for polynomials written as matrices.                             |
+     comDenom                                                        | Returns the expression after reduction at the same denominator                     |
+     cpartfrac                                                       | Performs partial fraction decomposition in C of a fraction.                        |
+ +++ dfc                                                             | Returns the continued fraction representation of real with order integer using ..  |
+ +++ dfc2c                                                           | Transforms continued_fraction vector back into a real number, fraction, or value.  |
+     f2nd                                                            | Returns the list built with the numerator and the denominator of the simplified..  |
+     lnexpand                                                        | Expands logarithms.                                                                |
+     product                                                         | Multiplicates the values of the expression when the variable goes from a to b..    |
+     surd                                                            | Returns Expr to the power of 1/n                                                   |
+                                                                     |                                                                                    |
+     GF                                                              | Creates a Galois Field of characteristic p with p^n elements.                      |
+     fracmod                                                         | Returns the fraction a/b such as a/b=Xpr mod n, -vn/2<a<=vn/2 and..                |
+     iabcuv                                                          | Returns [u,v] such as au+bv=c for 3 integers a,b,c                                 |
+     id                                                              | The name of the identity function (R^n-> R^n)                                      |
+     interval2center                                                 | Returns the center of the interval or the object.                                  |
+     pa2b2                                                           | Returns [a,b] such as a^2+b^2=n (for n prime and n=1 (mod 4))                      |
+     pade                                                            | Pade approximation P/Q=Xpr mod x^(n+1) or mod N with degree(P)<p                   |
+     resultant                                                       | Returns the inert form of the resultant for modular computation (irem/mod)         |
+     romberg                                                         | Uses Romberg's method to return the approximate value of the integral of the..     |
+     vpotential                                                      | Returns U such as curl(U)=V                                                        |
+                                                                                                                                                          |
+     ====================== 11. Trigonometry =======================                                                                                      |
+                                                                                                                                                          |
+ 209 CSC                Toolbox  Math  Trigonometry                  | Cosecant. The Cosecant function; that is, 1/sin(x)                                 |
+ 210 ACSC               Toolbox  Math  Trigonometry                  | Arc cosecant. The function derived from the inverse of the Cosecant function.      |
+ 211 SEC                Toolbox  Math  Trigonometry                  | Secant. The Secant function; that is, 1/cos(x).                                    |
+ 212 ASEC               Toolbox  Math  Trigonometry                  | Arc secant. The function derived from the inverse of the Secant function.          |
+ 213 COT                Toolbox  Math  Trigonometry                  | Cotangent. The Cotangent function; that is, cos(x)/sin(x).                         |
+ 214 ACOT               Toolbox  Math  Trigonometry                  | Arc cotangent. The function derived from the inverse of the Cotangent function.    |
+                                                                     |                                                                                    |
+ 215 SINH               Toolbox  Math  Hyperbolic                    | Hyperbolic sine.                                                                   |
+ 216 ASINH              Toolbox  Math  Hyperbolic                    | Inverse hyperbolic sine.                                                           |
+ 217 COSH               Toolbox  Math  Hyperbolic                    | Hyperbolic cosine.                                                                 |
+ 218 ACOSH              Toolbox  Math  Hyperbolic                    | Inverse hyperbolic cosine.                                                         |
+ 219 TANH               Toolbox  Math  Hyperbolic                    | Hyperbolic tangent.                                                                |
+ 220 ATANH              Toolbox  Math  Hyperbolic                    | Inverse hyperbolic tangent.                                                        |
+                                                                     |                                                                                    |
+ 356 asin2acos          Toolbox  CAS   Rewrite         Sine          | Replaces arcsin(x) by p/2-arccos(x) in the argument.                               |
+ 357 asin2atan          Toolbox  CAS   Rewrite         Sine          | Replaces arcsin(x) by arctan(x/v(1-x^2)) in the argument.                          |
+ 358 sin2costan         Toolbox  CAS   Rewrite         Sine          | Rewrites Expr so that sin(x) is replaced by cos(x)*tan(x)                          |
+                                                                     |                                                                                    |
+ 359 acos2asin          Toolbox  CAS   Rewrite         Cosine        | Replaces arccos(x) by p/2-arcsin(x) in the argument Expr.                          |
+ 360 acos2atan          Toolbox  CAS   Rewrite         Cosine        | Replaces arccos(x) by p/2-arctan(x/v(1-x^2)) in the argument.                      |
+ 361 cos2sintan         Toolbox  CAS   Rewrite         Cosine        | Replaces cos(x) by sin(x)/tan(x) in the argument.                                  |
+                                                                     |                                                                                    |
+ 362 atan2asin          Toolbox  CAS   Rewrite         Tangent       | Replaces arctan(x) by arcsin(x/v(1+x^2)) in the argument Expr.                     |
+ 363 atan2acos          Toolbox  CAS   Rewrite         Tangent       | Replaces arctan(x) by p/2-arccos(x/v(1+x^2)) in the argument.                      |
+ 364 tanx - sinx/cosx   Toolbox  CAS   Rewrite         Tangent       |                                                                                    |
+ 365 halftan            Toolbox  CAS   Rewrite         Tangent       | Transforms sin(x), cos(x) and tan(x) as a function of tan(x/2).                    |
+                                                                     |                                                                                    |
+ 366 trigsin            Toolbox  CAS   Rewrite         Trig          | Simplifies the argument Expr using the formulas sin(x)^2+cos(x)^2=1 and..          |
+ 367 trigcos            Toolbox  CAS   Rewrite         Trig          | Simplifies the argument Expr using the formulas sin(x)^2+cos(x)^2=1 and..          |
+ 368 trigtan            Toolbox  CAS   Rewrite         Trig          | Simplifies the argument Expr using the formulas sin(x)^2+cos(x)^2=1 and..          |
+ 369 atrig2ln           Toolbox  CAS   Rewrite         Trig          | Rewrites the expression Expr containing inverse trigonometric functions with..     |
+ 370 tlin               Toolbox  CAS   Rewrite         Trig          | Returns a trigonometric expression with the products and integer powers..          |
+ 371 tcollect           Toolbox  CAS   Rewrite         Trig          | Collects trigonometric expressions.                                                |
+ 372 trigexpand         Toolbox  CAS   Rewrite         Trig          | Expands trigonometric functions.                                                   |
+ 373 trig2exp           Toolbox  CAS   Rewrite         Trig          | Replaces trigonometric functions in Expr with complex exponentials( without..      |
+                                                                     |                                                                                    |
+     SIN                                                             | Returns the sine of Value. Value is interpreted as either degrees or radians,..    |
+     COS                                                             | Returns the cosine of Value. Value is interpreted as either degrees or radians,..  |
+     TAN                                                             | Returns the tangent of Value. Value is interpreted as either degrees or radians,.. |
+     ASIN                                                            | ASIN: the inverse sine function. This Shift-key combination returns the inverse..  |
+     ACOS                                                            | ACOS: the inverse cosine function. This Shift-key combination returns the..        |
+     ATAN                                                            | ATAN: the inverse tangent function. This Shift-key combination returns the..       |
+                                                                     |                                                                                    |
+     halftan_hyp2exp                                                 | Transforms the trigonometric functions in tan(x/2) and hyperbolic functions into.. |
+     hyp2exp                                                         | Transforms the hyperbolic functions with the exponential function.                 |
+     tan2cossin2                                                     | Rewrites Expr with tan(x) replaced by (1-cos(2*x))/sin(2*x)                        |
+     tan2sincos                                                      | Rewrites Expr with tan(x) using sin(x)/cos(x)                                      |
+     tan2sincos2                                                     | Rewrites Expr with tan(x) replaced by sin(2*x)/(1+cos(2*x))                        |
+     sincos                                                          | Returns an expression with the complex exponentials rewritten in terms of sine..   |
+     shift_phase                                                     | Returns the expressions where the phase of the evaluated trigonometric..           |
+                                                                                                                                                          |
+     ========================== 12. Lists ==========================                                                                                      |
+                                                                                                                                                          |
+ 249 MAKELIST           Toolbox  Math  List                          | Make List. Calculates a sequence of elements for a +++ list. Evaluates..           |
+ 250 SORT               Toolbox  Math  List                          | Sort list. Sorts the elements of list in ascending order.                          |
+ 251 REVERSE            Toolbox  Math  List                          | Reverse list. Reverses the order of the elements in list and returns them in a..   |
+ 252 CONCAT             Toolbox  Math  List                          | Concatenation. Concatenates (joins) items into a list.                             |
+ 253 suppress           Toolbox  Math  List                          | Returns l without the element of index n                                           |
+ 254 INSERT             Toolbox  Math  List                          |                                                                                    |
+ 255 POS                Toolbox  Math  List                          | List Position. Returns the position of element within list. If there is more..     |
+ 256 SIZE               Toolbox  Math  List                          | List Size. Returns the number of elements in list.                                 |
+ 257 ?LIST              Toolbox  Math  List                          | List Difference. Creates a +++ list composed of the first differences of list;..   |
+ 258 ?LIST              Toolbox  Math  List                          | Sum of a list. Returns the sum of all elements in list.                            |
+ 259 ?LIST              Toolbox  Math  List                          | List Product. Calculates the product of all elements in list.                      |
+ 260 DIFFERENCE         Toolbox  Math  List                          | Returns a list of the elements that are not common between 2 or more of the..      |
+ 261 INTERSECT          Toolbox  Math  List                          | Returns a list of the elements common to all the lists.                            |
+ 262 UNION              Toolbox  Math  List                          | concatenates the inputs, removing all duplicates.                                  |
+ 263 EQ                 Toolbox  Math  List                          |                                                                                    |
+                                                                     |                                                                                    |
+     .*                                                              | Performs an element-by-element multiplication of 2 lists or 2 matrices.            |
+     ./                                                              | Performs an element-by-element division of 2 lists or 2 matrices.                  |
+     .-                                                              | Substract the real/complex to each element of the matrix (or the reverce as..      |
+     .^                                                              | Calculates the power of each element of the matrix.                                |
+     .+                                                              | Adds the real/complex to each element of the matrix                                |
+                                                                     |                                                                                    |
+ +++ count_eq                                                        | Returns the count of items from list or matrix that are equal to item.             |
+ +++ count_inf                                                       | Returns the count of items from list or matrix that are less than item.            |
+ +++ count_sup                                                       | Returns the count of items from list or matrix that are greater than item.         |
+ +++ shift                                                           | Given a list or vector and an integer n, shifts the elements of the list or ..     |
+                                                                     |                                                                                    |
+ +++ EVALLIST                                                        | Evaluates the content of each element in the list and returns the resulting list.  |
+                                                                     |                                                                                    |
+     append                                                          | Append an element to a list.                                                       |
+     cat                                                             | Evaluates the arguments, then concatenates them into a string.                     |
+     cumSum                                                          | Returns the list (or the sequence or the string) lr where the elements are the..   |
+     deltalist                                                       | Returns the list of the difference of two terms in succession.                     |
+     prepend                                                         | Puts the element at the beginning of the list.                                     |
+     revlist                                                         | Returns the list l in reverse order                                                |
+     tail                                                            | Returns the list (or sequence or string) without its first element                 |
+     zip                                                             | Returns a list whose j-th entry is f(l1[j],l2[j]): without default value its..     |
+                                                                     |                                                                                    |
+     list2mat                                                        | Returns the matrix with n columns and where terms are the list l completed..       |
+     mat2list                                                        | Returns the list of the terms of the matrix.                                       |
+     map                                                             | Apply the function f at the elements of the list l or at a polynomial of..         |
+     head                                                            | Shows the first element of a vector or a sequence or a string.                     |
+     length                                                          | Returns the size of a list, a string or a sequence.                                |
+     remove                                                          | Removes the occurences e of l or the elements e such that f(e)=true                |
+     reorder                                                         | Reorders the variables in E according to the order of the 2nd argument             |
+     member                                                          | Tests if e is in the list or the set l (=0 or k+1 with l[k]=e)                     |
+     table                                                           | Defines an array where the index are strings or real numbers                       |
+     select                                                          | Selects the elements e of l such that f(e)=true                                    |
+     apply                                                           | Apply the function f at the elements of the list l (option matrix for a matrix).   |
+     unapply                                                         | Returns a function defined by an expression.                                       |
+                                                                                                                                                          |
+     ========================== 13. Matrix =========================                                                                                      |
+                                                                                                                                                          |
+ 264 TRN                Toolbox  Math  Matrix                        | Transpose. Transposes matrix. If Complex mode is on and the matrix contains..      |
+ 265 DET                Toolbox  Math  Matrix                        | Determinant of a square matrix.                                                    |
+ 266 RREF               Toolbox  Math  Matrix                        | Reduced-Row Echelon Form. Changes a rectangular matrix to its reduced..            |
+                                                                     |                                                                                    |
+ 267 MAKEMAT            Toolbox  Math  Matrix          Create        | Make Matrix. Creates a matrix of dimension n × m, using expression to calculate..  |
+ 268 IDENMAT            Toolbox  Math  Matrix          Create        | Identity matrix. Creates a square matrix of dimension n x n whose diagonal..       |
+ 269 RANDMAT            Toolbox  Math  Matrix          Create        | Creates a random matrix with the specified number of rows and columns, and..       |
+ 270 JordanBlock        Toolbox  Math  Matrix          Create        | Returns a matrix n*n with a on the diagonal, 1 above, and 0 everywhere else.       |
+ 271 hilbert            Toolbox  Math  Matrix          Create        | Returns the order n Hilbert matrix: Hjk=1/(j+k+1) j,k=1..n                         |
+ 272 mkisom             Toolbox  Math  Matrix          Create        | Matrix of an isometry given by its proper elements.                                |
+ 273 valuation          Toolbox  Math  Matrix          Create        | Returns the valuation (degree of the term of lowest degree) of the polynomial P..  |
+                                                                     |                                                                                    |
+ 274 ABS                Toolbox  Math  Matrix          Basic         | For numerical arguments, returns the absolute value of the expression. For..       |
+ 275 ROWNORM            Toolbox  Math  Matrix          Basic         | Row Norm. Finds the maximum value (over all rows) for the sums of the absolute..   |
+ 276 COLNORM            Toolbox  Math  Matrix          Basic         | Column Norm. Finds the maximum value (over all columns) of the sums of the..       |
+ 277 SPECNORM           Toolbox  Math  Matrix          Basic         | Spectral Norm of matrix.                                                           |
+ 278 SPECRAD            Toolbox  Math  Matrix          Basic         | Spectral radius of matrix.                                                         |
+ 279 COND               Toolbox  Math  Matrix          Basic         | Condition Number. Finds the 1-norm (column norm) of a square matrix.               |
+ 280 RANK               Toolbox  Math  Matrix          Basic         | Rank of a rectangular matrix.                                                      |
+ 281 pivot              Toolbox  Math  Matrix          Basic         | Returns the matrix from A creating zeros in the column nc, by the method of..      |
+ 282 TRACE              Toolbox  Math  Matrix          Basic         | Trace of a square matrix. Finds the trace of a square matrix, equal to the sum..   |
+                                                                     |                                                                                    |
+ 283 EIGENVAL           Toolbox  Math  Matrix          Advanced      | Displays the eigenvalues in vector form for matrix.                                |
+ 284 EIGENVV            Toolbox  Math  Matrix          Advanced      | Eigenvectors and Eigenvalues for a square matrix. Displays a list of two arrays... |
+ 285 jordan             Toolbox  Math  Matrix          Advanced      | Returns the list made by the matrix of passage and the Jordan form of a matrix.    |
+ 286 diag               Toolbox  Math  Matrix          Advanced      | Returns either the diagonal matrix with diagonal l or the diagonal of A.           |
+ 287 cholesky           Toolbox  Math  Matrix          Advanced      | For a numerical symmetric matrix A, returns L matrix such that A=L*tran(L).        |
+ 288 ihermite           Toolbox  Math  Matrix          Advanced      | Hermite normal form of a matrix with coefficients in Z: returns U,B such that U..  |
+ 289 hessenberg         Toolbox  Math  Matrix          Advanced      | Matrix reduction to Hessenberg form. Returns [P,B] such that B=inv(P)*A*P.         |
+ 290 ismith             Toolbox  Math  Matrix          Advanced      | Smith normal form of a matrix with coefficients in Z : returns U,B,V such that U.. |
+                                                                     |                                                                                    |
+ 291 LQ                 Toolbox  Math  Matrix          Faktorize     | LQ Factorization. Factors an m n matrix into three matrices: {[[ m n..             |
+ 292 LSQ                Toolbox  Math  Matrix          Faktorize     | Least Squares. Displays the minimum norm least squares matrix (or vector).         |
+ 293 LU                 Toolbox  Math  Matrix          Faktorize     | LU Decomposition. Factors a square matrix into three matrices: ..                  |
+ 294 QR                 Toolbox  Math  Matrix          Faktorize     | QR Factorization. Factors an mn matrix into three matrices: {[[mm..                |
+ 295 SCHUR              Toolbox  Math  Matrix          Faktorize     | Schur Decomposition. Factors a square matrix into two matrices. If matrix is..     |
+ 296 SVD                Toolbox  Math  Matrix          Faktorize     | Singular Value Decomposition. Factors an m n matrix into two matrices and a..      |
+ 297 SVL                Toolbox  Math  Matrix          Faktorize     | Singular Values. Returns a vector containing the singular values of matrix.        |
+                                                                     |                                                                                    |
+ 298 CROSS              Toolbox  Math  Matrix          Vector        | Cross Product. Finds the cross product of vector1 with vector2.                    |
+ 299 DOT                Toolbox  Math  Matrix          Vector        | Dot Product. Finds the dot product of two arrays, matrix1 and matrix2.             |
+ 300 maxnorm            Toolbox  Math  Matrix          Vector        | Norm with the maximum of a vector (or of a matrix):..                              |
+ 301 l1norm             Toolbox  Math  Matrix          Vector        | Returns the l1 norm of the vector=sum of the absolute value of its coordinates.    |
+ 302 l2norm             Toolbox  Math  Matrix          Vector        | Returns the l1 norm of the vector=sum of the absolute value of its coordinates.    |
+                                                                     |                                                                                    |
+ 478 SWAPROW            Program  Cmds  Matrix                        | Swap Rows. Exchanges row1 and row2 in the specified matrix matrixname.             |
+ 479 ADDROW             Program  Cmds  Matrix                        | Add Row. Inserts values from vector into a row before row_number in the..          |
+ 480 DELCOL             Program  Cmds  Matrix                        | Delete Column. Deletes the column column_number from the matrix matrixname.        |
+ 481 DELROW             Program  Cmds  Matrix                        | Delete Row. Deletes the row row_number from the matrix matrixname.                 |
+ 482 EDITMAT            Program  Cmds  Matrix                        |                                                                                    |
+ 483 REDIM              Program  Cmds  Matrix                        | Redimensions the specified matrix or vector to size. For a matrix, size is a..     |
+ 484 REPLACE            Program  Cmds  Matrix                        | Replaces portion of a matrix, vector or string starting at start by object. For..  |
+ 485 SCALE              Program  Cmds  Matrix                        | Multiplies the specified row_number of the specified matrix by value.              |
+ 486 SCALEADD           Program  Cmds  Matrix                        | Multiplies the specified row1 of the matrix name by value, then adds this result.. |
+ 487 SUB                Program  Cmds  Matrix                        | Extracts a portion, of a list or matrix. For a matrix, start and end are two..     |
+ 488 SWAPCOL            Program  Cmds  Matrix                        | Swap Columns. Exchanges column1 and column2 in the specified matrix matrixname.    |
+ 489 ADDCOL             Program  Cmds  Matrix                        | Add Column. Inserts values from vector into a column before column_number in the.. |
+                                                                     |                                                                                    |
+     .*                                                              | Performs an element-by-element multiplication of 2 lists or 2 matrices.            |
+     ./                                                              | Performs an element-by-element division of 2 lists or 2 matrices.                  |
+     .-                                                              | Substract the real/complex to each element of the matrix (or the reverce as..      |
+     .^                                                              | Calculates the power of each element of the matrix.                                |
+     .+                                                              | Adds the real/complex to each element of the matrix                                |
+                                                                     |                                                                                    |
+ +++ count_eq                                                        | Returns the count of items from list or matrix that are equal to item.             |
+ +++ count_inf                                                       | Returns the count of items from list or matrix that are less than item.            |
+ +++ count_sup                                                       | Returns the count of items from list or matrix that are greater than item.         |
+ +++ shift                                                           | Given a list or vector and an integer n, shifts the elements of the list or ..     |
+                                                                     |                                                                                    |
+ +++ adjoint_matrix                                                  | Returns the characteristic polynomial of A and the comatrix of A-xI.               |
+ +++ blockmatrix                                                     | Returns the matrix of size m*n created from a vector of matrix_blocks of count m*n.|
+ +++ changebase                                                      | changebase takes as argument a matrix A and a change-of-basis matrix P and..       |
+ +++ colspace                                                        | Returns a matrix where the columns are a basis of the vector space generated by .. |
+ +++ rowspace                                                        | Returns a matrix where the rows are a basis of the vector space generated by the   |
+     identity                                                        | Returns the identity matrix of specified dimension n.                              |
+     inv                                                             | Returns the inverse of an expression or matrix.                                    |
+     matpow                                                          | Calculates the n power of a matrix by jordanization.                               |
+     normalize                                                       | Returns the vector divided by its l2norm. It is also an option for plotfield.      |
+     subMat                                                          | Extracts a sub matrix with first element=A[n1,n2] and last element=A[n3,n4]        |
+     transpose                                                       | Transposes a matrix (without conjugation)                                          |
+     vector                                                          | Defines a vector(origin is 0 if 1 arg) with two points or two components or two..  |
+                                                                     |                                                                                    |
+     basis                                                           | Extract a basis from a spanning set of vectors.                                    |
+     ibasis                                                          | Basis of the intersection of two vector spaces.                                    |
+                                                                     |                                                                                    |
+ +++ image                                                           | Image of a linear application of a matrix.                                         |
+     ker                                                             | Kernel of a linear application of matrix M.                                        |
+     linear_interpolate                                              | Makes a regular sample from a polygonal line defined by a 2 row matrix.            |
+     potential                                                       | Returns U such as derive(U,Vector_of_variable)=V                                   |
+     reduced_conic                                                   | Returns the origin and the matrix of a base in which the conic (given by its..     |
+     simult                                                          | Returns the matrix where the column of index k is solution of A*X=column of..      |
+                                                                     |                                                                                    |
+     eigenvals                                                       | Returns the sequence of the (calculable) eigenvalues of a matrix.                  |
+     eigenvects                                                      | Computes the eigenvectors of a diagonalizable matrix.                              |
+     eigVc                                                           | Computes the eigenvectors of a diagonalizable matrix.                              |
+     eigVl                                                           | Returns the Jordan matrix associated to A when the eigenvalues are calculable.     |
+     gramschmidt                                                     | Returns an orthonormal base of E of base B for the scalar product Sp.              |
+ +++ hadamard                                                        | Hadamard bound of a matrix or element by element multiplication of 2 matrices.     |
+     vandermonde                                                     | Returns the Vandermonde matrix=[V^0,V^1,..]                                        |
+                                                                                                                                                          |
+     ========================= 14. Polynomial =======================                                                                                      |
+                                                                                                                                                          |
+ 388 proot              Toolbox  CAS   Polynomial                    | Returns all computed roots of a polynomial given by its coefficients (may not..    |
+ 389 coeff              Toolbox  CAS   Polynomial                    | Returns the list of coefficients of a polynomial with respect to the second..      |
+ 390 divis              Toolbox  CAS   Polynomial                    | Returns the list of divisors of a polynomial.                                      |
+ 391 factors            Toolbox  CAS   Polynomial                    | Returns the list of prime factors of a polynomial; each factor followed by its..   |
+ 392 gcd                Toolbox  CAS   Polynomial                    | Returns the greatest common divisor of 2 polynomials of several variables. Can..   |
+ 393 lcm                Toolbox  CAS   Polynomial                    |                                                                                    |
+                                                                     |                                                                                    |
+ 394 symb2poly          Toolbox  CAS   Polynomial      Create        | Returns the coefficients of a polynomial Expr with respect tothe variable Var or.. |
+ 395 poly2symb          Toolbox  CAS   Polynomial      Create        | Returns a polynomial (orthe polynomial and its value) in Var (by default x), the.. |
+ 396 pcoeff             Toolbox  CAS   Polynomial      Create        | Returns the polynomial coefficients having the roots specified in the vector..     |
+ 397 fcoeff             Toolbox  CAS   Polynomial      Create        | Returns the polynomial described by a list of roots, each followed by its order.   |
+ 398 randPoly           Toolbox  CAS   Polynomial      Create        | Returns a vector of coefficients of a polynomial of variable Var (or x), of..      |
+ 399 pmin               Toolbox  CAS   Polynomial      Create        | Returns the minimal polynomial of a square matrix.                                 |
+                                                                     |                                                                                    |
+ 400 quo                Toolbox  CAS   Polynomial      Algebra       | Returns the Euclidean quotient of 2 polynomials                                    |
+ 401 rem                Toolbox  CAS   Polynomial      Algebra       | Returns the Euclidean remainder of the quotient of 2 polynomials. If the..         |
+ 402 degree             Toolbox  CAS   Polynomial      Algebra       | Returns the degree of the polynomial Poly.                                         |
+ 403 factor_xn          Toolbox  CAS   Polynomial      Algebra       | Factorizes x^n in P\the polynomial Poly (n=degree of polynomial P).                |
+ 404 content            Toolbox  CAS   Polynomial      Algebra       | Returns the gcd of the coefficients of the polynomial Poly.                        |
+ 405 sturmab            Toolbox  CAS   Polynomial      Algebra       | Returns the number of sign changes of a polynomial in the interval (Cplx1,..       |
+ 406 chrem              Toolbox  CAS   Polynomial      Algebra       | Chinese remainders for integers.                                                   |
+                                                                     |                                                                                    |
+ 407 cyclotomic         Toolbox  CAS   Polynomial      Special       | Generates a vector representing the nth cyclotomic polynomial.                     |
+ 408 gbasis             Toolbox  CAS   Polynomial      Special       | Returns the Groebner basis of the ideal spanned by the list of polynomials.        |
+ 409 greduce            Toolbox  CAS   Polynomial      Special       | Returns the remainder of the division of a polynomial by a Groebner basis.         |
+ 410 hermite            Toolbox  CAS   Polynomial      Special       | Returns nth Hermite polynomial.                                                    |
+ 411 lagrange           Toolbox  CAS   Polynomial      Special       | Returns the polynomial of degree n-1 such that P(xk)=yk, for k=0, 1, ..., n-1.     |
+ 412 laguerre           Toolbox  CAS   Polynomial      Special       | Returns the nth Laguerre polynomial.                                               |
+ 413 legendre           Toolbox  CAS   Polynomial      Special       | Returns the nth Legendre polynomial.                                               |
+ 414 lll_reduce         Toolbox  CAS   Polynomial      Special       | Implementation of the Lenstra?Lenstra?Lovász lattice basis reduction algorithm.    |
+ 415 tchebyshev1        Toolbox  CAS   Polynomial      Special       | Returns the nth Tchebyshev polynomial of the first kind.                           |
+ 416 tchebyshev2        Toolbox  CAS   Polynomial      Special       | Returns the nth Tchebyshev polynomial of the second kind.                          |
+                                                                     |                                                                                    |
+     egcd                                                            | Returns the extended greatest common divisor of 2 polynomials.                     |
+     ezgcd                                                           | Returns the GCD of 2 polynomials with at least 2 variables, with the ezgcd..       |
+     iegcd                                                           | Extended greatest common divisor for two integers. Returns [u,v,igcd(a,b)] such..  |
+     icontent                                                        | Returns the GCD of the integer coefficients of a polynomial.                       |
+     lgcd                                                            | Returns the greatest common divisor of a list of polynomials or of integers.       |
+     modgcd                                                          | Returns the GCD of 2 polynomials, with the modular algorithm.                      |
+     primpart                                                        | Returns the polynomial P divided by the gcd of its coefficients.                   |
+                                                                     |                                                                                    |
+     lcoeff                                                          | Returns the coefficient of the term of highest degree of a polynomial..            |
+ +++ tcoeff                                                          | Returns the coefficient of the term of lowest degree of a polynomial.              |
+                                                                     |                                                                                    |
+     POLYCOEF                                                        | Polynomial coefficients. Returns the coefficients of the polynomial with the..     |
+     POLYEVAL                                                        | Polynomial evaluation. Evaluates a polynomial with the coefficients specified in.. |
+                                                                     |                                                                                    |
+     canonical_form                                                  | Canonical form of a second degree polynomial.                                      |
+     charpoly                                                        | List of the coefficients of the characteristic polynomial of a matrix or..         |
+     companion                                                       | Companion matrix of a polynomial (an=1).                                           |
+     sqrfree                                                         | Returns a polynomial factorized as a product of powers of coprime factors where..  |
+                                                                     |                                                                                    |
+     abcuv                                                           | Returns [u,v] suchthat au+bv=c for 3 polynomials a, b, and c.                      |
+ +++ bernoulli                                                       | Returns Bernoulli number n, or Bernoulli polynomial n using variable.              |
+     ptayl                                                           | Returns the Taylor polynomial Q such as P(x)=Q(x-a)                                |
+ +++ sturm                                                           | Returns the Sturm sequence corresponding to a polynomial or the number of sign ..  |
+     sturmseq                                                        | Returns the Sturm sequence corresponding to a polynomial or to a rational..        |
+     sylvester                                                       | Returns the Sylvester matrix of two polynomials                                    |
+     vertices                                                        | Returns the list of the vertices of the polygon or polyhedron P.                   |
+     vertices_abca                                                   | Returns the closed list [A,B,...A] of the vertices of the polygon or polyhedron..  |
+     quorem                                                          | Returns the Euclidean quotient and remainder of the quotient of 2 polynomials in.. |
+     iquorem                                                         | Euclidean quotient and remainder. Returns the integer quotient and remainder..     |
+                                                                                                                                                          |
+     ========================= 15. Strings =========================                                                                                      |
+                                                                                                                                                          |
+ 429 REPLACE            Program  Cmds  Strings                       |                                                                                    |
+ 430 CHAR               Program  Cmds  Strings                       | Returns the string corresponding to the ASCII character codes in vector, or the..  |
+ 431 DIM                Program  Cmds  Strings                       | Returns the number of characters in string.                                        |
+ 432 EXPR               Program  Cmds  Strings                       | Parses string into a number or expression.                                         |
+ 433 STRING             Program  Cmds  Strings                       | Evaluates expression and returns the result as a string.                           |
+ 434 INSTRING           Program  Cmds  Strings                       | Returns the index of the first occurrence of string2 in string1. Returns 0 if..    |
+ 435 LEFT               Program  Cmds  Strings                       | Returns the first n characters of the string.                                      |
+ 436 RIGHT              Program  Cmds  Strings                       | Returns the last n characters of the string.                                       |
+ 437 MID                Program  Cmds  Strings                       | Extracts n characters from string starting at position. If n is not specified,..   |
+ 438 ROTATE             Program  Cmds  Strings                       | If n is not negative, takes the first n characters of string and put them on..     |
+ 439 STRINGFROMID       Program  Cmds  Strings                       | Returns the built-in string associated with the ID of the current language.        |
+ 440 LOWER              Program  Cmds  Strings                       |                                                                                    |
+ 441 UPPER              Program  Cmds  Strings                       |                                                                                    |
+ 442 ASC                Program  Cmds  Strings                       | Returns a vector containing the ASCII codes of string.                             |
+                                                                     |                                                                                    |
+     format                                                          | Transforms the real into a string with the indicated format..                      |
+ +++ latex                                                           | Returns the evaluated CAS expression written in Latex format.                      |
+                                                                                                                                                          |
+     ========================== 16. Bits ===========================                                                                                      |
+                                                                                                                                                          |
+ 493 BITSL              Program  Cmds  Integer                       | Bitwise shift left. Takes one or two integers as input and returns the result of.. |
+ 494 GETBITS            Program  Cmds  Integer                       | Returns the number of bits used for calculations with this integer.                |
+ 495 SETBASE            Program  Cmds  Integer                       | Sets the base used for display of this integer. If base is not specified the..     |
+ 496 B?R                Program  Cmds  Integer                       | Transform an integer into a real number.                                           |
+ 497 R?B                Program  Cmds  Integer                       | Transform a real number into an integer. Optionally specifies bits and base. ..    |
+ 498 BITAND             Program  Cmds  Integer                       | Bitwise logical AND. Takes n integers as input and returns their bitwise logical.. |
+ 499 BITOR              Program  Cmds  Integer                       | Bitwise logical OR. Takes n integers as input and returns their bitwise logical..  |
+ 500 BITXOR             Program  Cmds  Integer                       | Bitwise logical exclusive OR (XOR). Takes n integers as input and returns their..  |
+ 501 BITNOT             Program  Cmds  Integer                       | Bitwise logical NOT. Takes one integer as input and returns its bitwise not.       |
+ 502 BITSR              Program  Cmds  Integer                       | Bitwise shift right. Takes one or two integers as input and returns the result..   |
+ 503 SETBITS            Program  Cmds  Integer                       | Sets the number of bits used for calculations with this integer to bits. If..      |
+                                                                     |                                                                                    |
+     GETBASE                                                         | Returns the base used for display for this integer. 0: system 1: bin 2: oct..      |
+                                                                     |                                                                                    |
+     AND                                                             | Logical AND. Returns 1 if both value1 and value2 are non-zero; otherwise..         |
+     OR                                                              | Logical OR. Returns 1 if either Value1 or Value2 is non-zero, otherwise..          |
+     XOR                                                             | Exclusive OR. Returns 1 if either Value1 or Value2 is non-zero but not both;..     |
+     NOT                                                             | Logical NOT. Returns 1 if Value is zero; otherwise returns 0.                      |
+     hamdist                                                         | Bit Hamming distance.                                                              |
+                                                                                                                                                          |
+     ======================== 17. Programs =========================                                                                                      |
+                                                                                                                                                          |
+ 490 STARTAPP           Program  Cmds  App Functions                 | Starts the app AppName. The App's START function will run if present. The App?s..  |
+ 491 STARTVIEW          Program  Cmds  App Functions                 | Starts a view of the current app. Redraw, is optional; if Redraw, is true (non..   |
+ 492 VIEW               Program  Cmds  App Functions                 | VIEW. Allows a programmer to customize the Views menu. Causes "text" to apear..    |
+                                                                     |                                                                                    |
+ 504 INPUT              Program  Cmds  I/O                           | or INPUT({vars},[?title?], [{?labels?}], [{?help?}], [{reset}]) Starts a..         |
+ 505 EDITMAT            Program  Cmds  I/O                           | Starts the Matrix Editor and displays the specified matrix. If used in..           |
+ 506 WAIT               Program  Cmds  I/O                           | Halts program execution for the specified number of seconds. If n is omitted or..  |
+ 507 MOUSE              Program  Cmds  I/O                           | Returns the current pointer's location. returns: two lists of the form {#x,..      |
+ 508 GETKEY             Program  Cmds  I/O                           | Returns the ID of the first key in the keyboard buffer, or -1 if no key was..      |
+ 509 ISKEYDOWN          Program  Cmds  I/O                           | Returns true (non-zero) if the key whose Key_ID is provided is currently..         |
+ 510 PRINT              Program  Cmds  I/O                           | Prints either the result of expr or string to the terminal. The terminal is a..    |
+ 511 MSGBOX             Program  Cmds  I/O                           | Displays a message box with either the value of expression or string. If..         |
+ 512 CHOOSE             Program  Cmds  I/O                           | Displays a choose box with the given title and containing items with the strings.. |
+ 513 CHOOSEDATE         Program  Cmds  I/O                           |                                                                                    |
+ 514 EDITLIST           Program  Cmds  I/O                           | Starts the List Editor and displays the specified list. If used in programming,..  |
+                                                                     |                                                                                    |
+ 515 TYPE               Program  Cmds  More                          | Returns the type of the object: 0: Real 1: Integer 2: String 3: Complex 4:..       |
+ 516 EVAL               Program  Cmds  More                          | Evaluates the expression. Usefull in programs where parameters are passed non..    |
+ 517 TICKS              Program  Cmds  More                          |                                                                                    |
+ 518 TEVAL              Program  Cmds  More                          |                                                                                    |
+ 519 ITERATE            Program  Cmds  More                          | Repeatedly for #times evaluates expr in terms of var. The value for var is..       |
+ 520 EXECON             Program  Cmds  More                          | Returns a matrix or list composed of the result of the evaluation of the..         |
+ 521 HMS?               Program  Cmds  More                          | Hours-minutes-seconds to decimal. Forces a number to be displayed in decimal..     |
+ 522 ?HMS               Program  Cmds  More                          | Decimal to hours-minutes-seconds. Change the way a number is displayed to HMS..    |
+ 523 DDAYS              Program  Cmds  More                          |                                                                                    |
+ 524 DATEADD            Program  Cmds  More                          |                                                                                    |
+ 525 DAYOFWEEK          Program  Cmds  More                          |                                                                                    |
+ 526 %CHANGE            Program  Cmds  More                          | Percent change from x to y. Returns 100*(y-x)/x. %CHANGE(20,50) returns 150        |
+ 527 %TOTAL             Program  Cmds  More                          | Percent total; the percentage of x that is y. Returns 100*y/x. %TOTAL(20,50) ..    |
+ 528 CAS                Program  Cmds  More                          | Evalute an expression or variable using the CAS. Note that outputs in numerical..  |
+                                                                     |                                                                                    |
+ 529 BEGIN              Program  Tmplt Block                         | Defines a set of commands to be executed in a block.                               |
+ 530 KILL               Program  Tmplt Block                         | Stops the execution of the program.                                                |
+ 531 RETURN             Program  Tmplt Block                         | Exits from a function and returns the value of expression (optional).              |
+                                                                     |                                                                                    |
+ 532 IF                 Program  Tmplt Branch                        | Evaluates test. If test is true (non 0), executes command(s); otherwise,..         |
+ 533 IF THEN ELSE       Program  Tmplt Branch                        |                                                                                    |
+ 534 CASE               Program  Tmplt Branch                        | Starts a "CASE...END" branch structure.                                            |
+ 535 IFERR              Program  Tmplt Branch                        | Executes sequence of commands1. If an error occurs during execution of..           |
+ 536 IFERR ELSE         Program  Tmplt Branch                        |                                                                                    |
+                                                                     |                                                                                    |
+ 537 FOR                Program  Tmplt Loop                          | Sets variable var to start; then, for as long as this variable?s value is less..   |
+ 538 FOR STEP           Program  Tmplt Loop                          |                                                                                    |
+ 539 FOR DOWN           Program  Tmplt Loop                          |                                                                                    |
+ 540 FOR DOWN STEP      Program  Tmplt Loop                          |                                                                                    |
+ 541 WHILE              Program  Tmplt Loop                          | executes command(s) WHILE the test is true. A:=5; WHILE A>1 DO ..                  |
+ 542 REPEAT             Program  Tmplt Loop                          | executes command(s) UNTIL the test is true. A:=5; REPEAT PRINT(A); ..              |
+ 543 BREAK              Program  Tmplt Loop                          | Exits from expression local loop structure.                                        |
+ 544 CONTINUE           Program  Tmplt Loop                          |                                                                                    |
+                                                                     |                                                                                    |
+ 545 LOCAL              Program  Tmplt Variable                      | Declares a local variable. If the declaration is in a function block, these..      |
+ 546 EXPORT             Program  Tmplt Variable                      |                                                                                    |
+                                                                     |                                                                                    |
+ 547 EXPORT             Program  Tmplt Function                      | In a program, declares a list of exported variable or an exported function.        |
+ 548 VIEW               Program  Tmplt Function                      |                                                                                    |
+ 549 KEY                Program  Tmplt Function                      |                                                                                    |
+                                                                     |                                                                                    |
+     DO                                                              | Sets variable var to start; then, for as long as this variable?s value is less..   |
+     ELSE                                                            | Evaluates test. If test is true (non 0), executes command(s); otherwise,..         |
+     END                                                             |                                                                                    |
+     IFTE                                                            | If...Then...Else... If Expr evaluates true (1), evaluates Trueclause; if not,..    |
+     STEP                                                            | Sets variable var to start; then, for as long as this variable?s value is less..   |
+     THEN                                                            | Evaluates test. If test is true (non 0), executes command(s); otherwise,..         |
+     TO                                                              | Sets variable var to start; then, for as long as this variable?s value is less..   |
+     UNTIL                                                           | executes command(s) UNTIL the test is true. A:=5; REPEAT PRINT(A); ..              |
+     when                                                            | If condition (even symbolic) returns expr1 else returns expr2 (..is the infixed..  |
+ +++ nop                                                             |                                                                                    |
+                                                                     |                                                                                    |
+     QUOTE                                                           | Returns the expression unchanged and un-evaluated. This function is mostly used..  |
+                                                                     |                                                                                    |
+     breakpoint                                                      | Adds a breakpoint.                                                                 |
+     DEBUG                                                           |                                                                                    |
+     halt                                                            | Puts a program in step-by-step debug mode.                                         |
+                                                                     |                                                                                    |
+     ======================================================================================================================================================
