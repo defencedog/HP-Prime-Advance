@@ -1,7 +1,61 @@
 Have some tutorials
 
-# Transferring Python variables to PPL
+~~~ Transferring Python variables to PPL
 
 
 
-# Using Python codes / functions in CAS 
+~~~ Using Python codes / functions in CAS 
+@ https://www.hpmuseum.org/forum/thread-16995-post-148454.html#pid148454
+
+
+#PYTHON test
+#pytest
+
+import sys
+ 
+def sqrx(x):
+  """
+  Square a number.
+  """
+  return int(x)**2
+
+# get the number on the stack and square it
+y = sqrx(sys.argv[0])
+# print the result to the Terminal
+print(y)
+
+#end 
+
+EXPORT pytest(a)
+BEGIN
+  // clear the Terminal
+  PRINT;
+  // run the Python script
+  PYTHON(test,a);
+  // evaluate the string in the Terminal and return to the stack
+  // important step to be used as CAS formula
+  RETURN EXPR(TERMINAL(1));
+END;
+
+
+~~~ Will write .txt file in python APP Library folder
+
+#PYTHON linew
+#pylinew
+
+# list of names
+names = ['Jessa', 'Eric', 'Bob']
+
+# open file in write mode
+with open(r'demo.txt', 'w') as fp:
+    for item in names:
+        # write each item on a new line
+        # doesn't support fstring syntax
+        fp.write("%s\n" % item)
+    print('Done')
+    
+EXPORT pylinew()
+BEGIN
+  PRINT;
+  PYTHON(linew);
+END;
