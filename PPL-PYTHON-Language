@@ -17,26 +17,9 @@ There are a few optimizations in the CAS interpreter in this beta version, they 
 used in the loops are local variables (and loops are a little faster if they contain only 1 instruction), 
 another reason to declare local variables with the local keyword (something that you can not do in Python).
 
-~~~ Transferring Python variables to PPL ~~~
-EXPORT test(dt1,dt2)
-BEGIN
-PRINT;                        
-L1:={}; L1:=dt1;
-L2:={}; L2:=dt2;
-END;
-  
-#PYTHON EXPORT ukvar()
-#start
-from hpprime import *
-from math import *
-uk_x=[i*2 for i in range(-10,10)]
-uk_y=[cos(i) for i in uk_x]
-uk_x=str(uk_x).replace('[','{').replace(']','}')
-uk_y=str(uk_y).replace('[','{').replace(']','}')
-# syntax to learn is below
-ttt=eval('test('+uk_x+','+uk_y+')')  
-print(uk_x,'\n',uk_y)
-#end
+~~~ Transferring Python variables to / from PPL by Guenter Schink ~~~
+@ https://www.hpmuseum.org/forum/thread-17833.html
+@ https://www.hpmuseum.org/forum/thread-18380-post-160378.html#pid160378
 
 
 ~~~ Using Python codes / functions in CAS ~~~
