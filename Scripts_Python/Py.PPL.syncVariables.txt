@@ -5,13 +5,15 @@ END;
   
 #PYTHON EXPORT pygrd()
 #start
-
 from hppprime import *
+
 grdlst = { 'A':range(90,100+1), 'B':range(80,90), 'C':range(70,80), 'D':range(60,70), 'Fail':range(0,60) }
 marks=eval('AVars(“marks”)')
+def _pygrd(marks):
+ for i in grdlst.keys():
+   if int(marks) in grdlst[i]:
+     return i
 
-for i in grdlst.keys():
-  if int(marks) in grdlst[i]:
-    print('Your grade: ',i)
-
+grd=_pygrd()
+print(grd)
 #end
