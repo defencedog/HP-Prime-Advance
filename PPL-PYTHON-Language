@@ -1,4 +1,21 @@
-Have some tutorials
+~~~ Some General Notes on CAS + PYTHON ~~~ 
+@ https://www.hpmuseum.org/forum/thread-9481-post-83159.html#pid83159
+@ https://www.hpmuseum.org/forum/thread-11354-post-103551.html#pid103551
+It's not Python, it's Python syntax compatibility inside CAS. I wrote a pre-parser that translates 
+Python-like indentation to CAS blocs: def/for/while/if/else -> function/for/while/if/else
+There are differences with true Python: only basic Python syntax is supported 
+(no class or generators for example), string delimiters must be " (' keeps the same meaning 
+that in normal CAS programs), there is no module import, but you have access to all CAS commands. 
+It is recommended to declare local variables, the current implementation of the pre-parser 
+will leave undeclared variables as global. List indexes follow HP convention on the Prime (start at 1). 
+The programming editor of the Prime does not support this syntax, 
+therefore it's not easy to program on the calc with Python syntax.
+The interpreter behind is the CAS interpreter, therefore it should run at the same speed, 
+and this is in general slower than the Home interpreter, there is a price to pay for more types 
+(exact types, symbolic expressions, but also functions that can be passed as arguments to functions). 
+There are a few optimizations in the CAS interpreter in this beta version, they will work if the variables 
+used in the loops are local variables (and loops are a little faster if they contain only 1 instruction), 
+another reason to declare local variables with the local keyword (something that you can not do in Python).
 
 ~~~ Transferring Python variables to PPL ~~~
 EXPORT test(dt1,dt2)
