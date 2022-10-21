@@ -3,7 +3,7 @@ BEGIN
   EVAL(marks:=dt);                      
 END;
   
-#PYTHON EXPORT ukmat()
+#PYTHON EXPORT pygrd()
 #start
 
 from hppprime import *
@@ -11,7 +11,7 @@ grdlst = { 'A':range(90,100+1), 'B':range(80,90), 'C':range(70,80), 'D':range(60
 marks=eval('AVars(“marks”)')
 
 for i in grdlst.keys():
-  if marks in grdlst[i]:
+  if int(marks) in grdlst[i]:
     print('Your grade: ',i)
 
 #end
