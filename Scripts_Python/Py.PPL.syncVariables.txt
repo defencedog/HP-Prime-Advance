@@ -1,6 +1,6 @@
 EXPORT passgrd(dt)
 BEGIN
-  return dt;                      
+  EVAL(marks:=dt);                      
 END;
   
 #PYTHON EXPORT ukmat()
@@ -8,8 +8,10 @@ END;
 
 from hppprime import *
 grdlst = { 'A':range(90,100+1), 'B':range(80,90), 'C':range(70,80), 'D':range(60,70), 'Fail':range(0,60) }
+marks=eval('AVars(“marks”)')
 
-
-
+for i in grdlst.keys():
+  if marks in grdlst[i]:
+    print('Your grade: ',i)
 
 #end
