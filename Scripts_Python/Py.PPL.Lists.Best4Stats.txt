@@ -1,8 +1,10 @@
 EXPORT crtlst(dt1,dt2)
 BEGIN
+// Explanation in Py.PPL.Matrix.Plotlist.txt
 PRINT;                        
 L1:={}; L1:=dt1;
 L2:={}; L2:=dt2;
+
 END;
   
 #PYTHON EXPORT ukvar()
