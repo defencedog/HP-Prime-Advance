@@ -1,0 +1,48 @@
+
+@ https://www.hpmuseum.org/forum/thread-4562-post-40971.html#pid40971
+
+AFiles and AVars create or access things within the current application. It doesn't matter if that is a copy of the base application, or a base application.
+
+AFiles will store things to disk. You cannot directly use those items by name. Nor can they be directly accessed. They do not remain in RAM taking up space when not in use. They must be recalled into RAM before use. (similar to an item saved in a port on the 48/50 series calcs). Example:
+
+Code:
+
+AFiles("MyFile"):={1,2,3,4,5}  //stores to a file named "MyFile" inside the current app folder
+L1:="MyFile" //would store into L1 the string "MyName" - not recall your file
+L1:=AFiles("MyFile") //recalls content of file, and then store it into L1
+
+AVars on the other had, creates a variable by name that can hold any object in the current application. They always remain in RAM like any other variable. This is like a normal variable accessed by the menu key in the 48/50 series.
+
+Code:
+
+AVars("MyVar"):={1,2,3,4,5}  //creates a variable named "MyFile" inside the current app
+L1:=MyVar; //would store into L1
+
+Note that the normal name resolution rules still apply. Unless MyVar has already been created, the program parser won't know what to do with it should you send that piece of code to someone.
+
+Code:
+
+MyVar; //I've declared this to be a variable
+
+EXPORT Function()
+BEGIN
+  AVars("MyVar"):={1,2,3,4,5}  //creates a variable named "MyFile" inside the current app
+  L1:=MyVar; //will always work
+END;
+
+Wheras:
+
+Code:
+
+EXPORT Function()
+BEGIN
+  AVars("MyVar"):={1,2,3,4,5}  //creates a variable named "MyFile" inside the current app
+  L1:=MyVar; //will only work if you have *already* created this before, else on compile will error here
+END;
+
+Recommended uses for AFiles: archiving things - especially if they are large! You don't want your app to take up 5mb of space when not in use do you?
+
+Recommended uses for AVars: variables in common use - especially those that will be smaller or used frequently. If your variable starts taking up lots of space, store it to a disk when not in use and clear that memory out to be courteous. Smile
+
+
+A store into AFiles will happen immediately - e.g. on call it writes at that instant to disk. AVars will only be saved to disk when the application in memory is saved. Usually, this will be on the next off.
