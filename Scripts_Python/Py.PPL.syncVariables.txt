@@ -1,0 +1,15 @@
+EXPORT passgrd(dt)
+BEGIN
+  return dt;                      
+END;
+  
+#PYTHON EXPORT ukmat()
+#start
+
+from hppprime import *
+grdlst = { 'A':range(90,100+1), 'B':range(80,90), 'C':range(70,80), 'D':range(60,70), 'Fail':range(0,60) }
+
+
+
+
+#end
