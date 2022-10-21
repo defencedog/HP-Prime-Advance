@@ -1,10 +1,31 @@
 Have some tutorials
 
-~~~ Transferring Python variables to PPL
+~~~ Transferring Python variables to PPL ~~~
+EXPORT test(dt1,dt2)
+BEGIN
+PRINT;                        
+L1:={}; L1:=dt1;
+L2:={}; L2:=dt2;
+END;
+  
+#PYTHON EXPORT ukvar()
+#start
+from hpprime import *
+from math import *
 
 
+uk_x=[i*2 for i in range(-10,10)]
+uk_y=[cos(i) for i in uk_x]
+uk_x=str(uk_x).replace('[','{').replace(']','}')
+uk_y=str(uk_y).replace('[','{').replace(']','}')
 
-~~~ Using Python codes / functions in CAS 
+# syntax to learn is below
+ttt=eval('test('+uk_x+','+uk_y+')')  
+print(uk_x,'\n',uk_y)
+#end
+
+
+~~~ Using Python codes / functions in CAS ~~~
 @ https://www.hpmuseum.org/forum/thread-16995-post-148454.html#pid148454
 
 
@@ -38,7 +59,7 @@ BEGIN
 END;
 
 
-~~~ Will write .txt file in python APP Library folder
+~~~ Will write .txt file in python APP Library folder ~~~
 
 #PYTHON linew
 #pylinew
