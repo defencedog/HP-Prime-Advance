@@ -2,7 +2,7 @@ EXPORT ppl_mat(dt1, dt2)
 BEGIN
 PRINT;                        
 M1:={}; M1:=dt1;
-M2:={}; M1:=dt2;
+M2:={}; M2:=dt2;
 END;
   
 #PYTHON EXPORT ukmat()
@@ -11,9 +11,9 @@ from hpprime import *
 from math import *
 
 # Will return string {{..},{..},...,{..}}
-def _2str(x,y):
-   z=[*zip(x,y)]
-   return str(z).replace('[','{').replace(']','}').replace('(','{').replace(')','}')
+def _2str(a,b):
+   c=list(zip(a,b)) # unpacking syntax isn't supported =[*zip(a,b)]
+   return str(c).replace('[','{').replace(']','}').replace('(','{').replace(')','}')
 
 uk_x=[i*2 for i in range(-10,10)]
 uk_y1=[cos(i) for i in uk_x]
