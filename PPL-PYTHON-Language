@@ -12,13 +12,10 @@ END;
 #start
 from hpprime import *
 from math import *
-
-
 uk_x=[i*2 for i in range(-10,10)]
 uk_y=[cos(i) for i in uk_x]
 uk_x=str(uk_x).replace('[','{').replace(']','}')
 uk_y=str(uk_y).replace('[','{').replace(']','}')
-
 # syntax to learn is below
 ttt=eval('test('+uk_x+','+uk_y+')')  
 print(uk_x,'\n',uk_y)
