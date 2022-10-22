@@ -1,4 +1,4 @@
-EXPORT crtlst(dt1,dt2)
+crtlst(dt1,dt2)
 BEGIN
 // Explanation in Py.PPL.Matrix.Plotlist.txt
 PRINT;                        
