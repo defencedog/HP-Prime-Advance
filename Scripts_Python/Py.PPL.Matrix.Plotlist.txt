@@ -5,8 +5,9 @@ PRINT;
 M1:={}; M1:=dt1;
 M2:={}; M2:=dt2;
 END;
-  
-#PYTHON EXPORT ukmat() // global subroutine, visible to user
+ 
+// global subroutine, visible to user
+#PYTHON EXPORT ukmat() 
 #start
 
 # for eval()
