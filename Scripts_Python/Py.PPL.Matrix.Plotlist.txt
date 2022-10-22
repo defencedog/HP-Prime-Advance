@@ -1,12 +1,11 @@
-ppl_mat(dt1, dt2)  // local subroutine, will be invisible to user
-BEGIN
+EXPORT ppl_mat(dt1, dt2)  
 PRINT;                        
 // flushing HP's M1 & M2 matrix & inserting all data at once
 M1:={}; M1:=dt1;
 M2:={}; M2:=dt2;
 END;
  
-// global subroutine, visible to user
+
 #PYTHON EXPORT ukmat() 
 #start
 
