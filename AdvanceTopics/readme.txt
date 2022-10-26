@@ -27,3 +27,14 @@ You could:
 - uncheck all the other V# with a loop with the command UNCHECK(4); UNCHECK(5),....
 UNCHECK({1,2}); //LIST WORKS ON FUNCTION
 - invoke the plot screen via STARTVIEW(1);
+
+# Spreadsheet and Plotting
+One method that seems to have issues now is the following:
+- Populate two columns of data in a spreadsheet, say A1:A10 and B1:B10
+- Create two user variable lists in two free spreadsheet cells, say xda and yda using =xda:=A1:A10 and =yda:=B1:B10
+- Open Statistics2Var Symb view and select xda, yda for S1: data
+- Plot, fit data as needed.
+OR
+In A1-A5, put your data (1,2,3,4,5) and some other data in B1-B5 (1.1,2.3,3.5,4.7,5.1). Now open your stat2var application. Press SYMB.
+For your first definition where it currently says C1 for independent, type Spreadsheet.A:A (fully qualified reference to all data in col A of application "Spreadsheet"), for your dependent, type Spreadsheet.B1:B5 (data from B1-B5 in your spreadsheet app).
+Now press PLOT and you have what you'd like! Press NUM, STATS to do your stat calculation, etc. Those definitions in symb are not just dumb names, but actual formula locations you can put anything.
