@@ -1,0 +1,9 @@
+BEGIN
+  // ...
+  STARTAPP("Statistics 2Var");  // Set current app.
+  C1:=L0; C2:=L1;    // Copy lists to app data columns.
+  SetIndep(S1,C1);   // Dataset 1 is column 1 ...
+  SetDepend(S1,C2);  // ... vs column 2.
+  Fit:=1;  // Turn fit plot off, since we're interested in the data points only.
+  STARTVIEW(9);      // Show autoscaled plot.
+END;
