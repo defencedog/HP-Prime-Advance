@@ -1,0 +1,12 @@
+~~~ MATRICES ~~~
+# http://edspi31415.blogspot.com/2022/10/matrices-in-python-without-numpy-part-1.html
+# Above is a x4 part series; v.good functions
+
+from linalg import *
+
+# Matrix creation
+m0=([ [1,2,3], [4,5,6] ])
+
+# alternaive to map() for matrices
+m1=ones(2,3)
+apply(lambda j: [i*2 for i in j], m1)
