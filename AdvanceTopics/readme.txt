@@ -18,3 +18,12 @@ F2(X)= SLOPE(F1,X)
 where SLOPE() is from Toolbox>App>Function>SLOPE (#5) and
 F1 is from Vars>App>Function>Symbolic>F1 (#1)
 or type SLOPE(), F1 in with Alpha...
+
+# Plotting a user function?
+https://www.hpmuseum.org/forum/thread-641.html
+You could:
+- assign your equation to V1,V2,.. with a V1:= your_eq_goes_here;
+- invoke the advanced graphic application through the STARTAPP("name_of_the_app") command
+- uncheck all the other V# with a loop with the command UNCHECK(4); UNCHECK(5),....
+UNCHECK({1,2}); //LIST WORKS ON FUNCTION
+- invoke the plot screen via STARTVIEW(1);
