@@ -6,6 +6,9 @@ from linalg import *
 
 # Matrix creation
 m0=([ [1,2,3], [4,5,6] ])
+ones(r,c)
+zeros(r,c)
+identity(n)
 
 # alternaive to map() for matrices
 m1=ones(2,3)
