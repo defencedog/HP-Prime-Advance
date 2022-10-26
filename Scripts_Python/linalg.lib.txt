@@ -14,3 +14,5 @@ apply(lambda j: [i*2 for i in j], m1)
 # Sum of rows of any Matrix
 EachRowSum= dot( M1, ones( len(M1[0]) ) )
 
+# Sum of columns of any Matrix
+EachRowSum= dot( transpose(M1), ones( len( transpose(M1)[0]) ) ) )
