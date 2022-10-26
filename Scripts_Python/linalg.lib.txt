@@ -15,7 +15,7 @@ m1=ones(2,3)
 apply(lambda j: [i*2 for i in j], m1)
 
 # Sum of rows of any Matrix
-EachRowSum= dot( M1, ones( len(M1[0]) ) )
+EachRowSum= dot( M1, ones( len(M1[0]), 1 ) )
 
 # Sum of columns of any Matrix
-EachColSum= dot( ones( len(M1) ), M1 )
+EachColSum= dot( ones( 1, len(M1) ), M1 )
