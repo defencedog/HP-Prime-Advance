@@ -1,0 +1,40 @@
+// https://www.hpmuseum.org/forum/thread-2246-post-165654.html
+// Author: HAN
+// Usage: contours("X^2+Y^2", {1,4,9,16,25,36});
+// Corrected Syntax
+
+export funcs:={"","","","","","","","","",""};
+
+export contours(func,zvals)
+begin
+
+  local i;
+  local s;
+  local n;
+
+  if (type(func)<>2) OR (type(zvals)<>6) then
+    msgbox("Warning! contours(func,zvals)
+  func: string
+ zvals: list of (at most 10) numbers");
+    kill;
+  end;
+
+  n:=SIZE(zvals);
+  startapp("Advanced Graphing");
+
+  for i from 0 to n-1 do
+    s:=left(STRING(i),1);
+    iferr funcs(i+1):=expr("STRING(V"+s+")"); then end;
+    expr("V" + s + ":=" + STRING(func + "=" + zvals(i)) + ";");
+    CHECK({i});
+  end;
+
+  startview(1,1);
+
+  for i from 0 to n-1 do
+    s:=left(STRING(i),1);
+    expr("V" + s + ":=" + STRING(funcs(i+1)) + ";");
+  end;
+
+  return(0);
+end; 
