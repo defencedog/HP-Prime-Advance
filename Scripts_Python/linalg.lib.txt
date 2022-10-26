@@ -15,4 +15,4 @@ apply(lambda j: [i*2 for i in j], m1)
 EachRowSum= dot( M1, ones( len(M1[0]) ) )
 
 # Sum of columns of any Matrix
-
+EachColSum= dot( ones( len(M1) ), M1 )
