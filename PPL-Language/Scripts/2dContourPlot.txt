@@ -1,6 +1,9 @@
 // https://www.hpmuseum.org/forum/thread-2246-post-165654.html
 // Author: HAN
 // Usage: contours("X^2+Y^2", {1,4,9,16,25,36});
+// The function should be in quotes, and use only capital X's and Y's. 
+// The list is a list of the z-values for which you wish to have contour lines. 
+// Please limit the list to only 10 numbers (the program does not check for this).
 // Corrected Syntax
 
 export funcs:={"","","","","","","","","",""};
