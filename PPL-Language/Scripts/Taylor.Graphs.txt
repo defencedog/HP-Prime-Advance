@@ -1,0 +1,18 @@
+// graph Taylor series on the Prime
+
+STARTAPP("Function");
+F1:=CAS("taylor(sin('X'),('X') = 0,1,polynom)");
+F2:=CAS("taylor(sin('X'),('X') = 0,3,polynom)");
+F3:=CAS("taylor(sin('X'),('X') = 0,5,polynom)");
+F4:=CAS("taylor(sin('X'),('X') = 0,7,polynom)");
+F5:=CAS("taylor(sin('X'),('X') = 0,9,polynom)");
+F6:=CAS("taylor(sin('X'),('X') = 0,11,polynom)");
+F7:=CAS("taylor(sin('X'),('X') = 0,13,polynom)");
+F8:=CAS("sin('X')");
+Xmax:=10;
+Ymax:=10;
+Xmin:=−10;
+Ymin:=-10;
+CHECK({1,2,3,4,5,6,7,8});
+UNCHECK({9,0});
+STARTVIEW(1);
