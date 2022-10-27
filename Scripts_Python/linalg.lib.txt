@@ -19,3 +19,8 @@ EachRowSum= dot( M1, ones( len(M1[0]), 1 ) )
 
 # Sum of columns of any Matrix
 EachColSum= dot( ones( 1, len(M1) ), M1 )
+
+# There is indeed a bug in transpose for non square matrices
+# https://www.hpmuseum.org/forum/thread-16897-post-151953.html#pid151953
+transpose = lambda a: [list(r) for r in zip(*a)]
+transpose([[1,2,3], [4,5,6]])  # [[1, 4], [2, 5], [3, 6]]
