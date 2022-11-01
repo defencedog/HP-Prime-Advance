@@ -1,1 +1,60 @@
+EXPORT pyRKF()
+BEGIN
+PYTHON(rkf);
+END;
+
+#PYTHON rkf()
+#start
+
+from math import *
+import hpprime as hp
+
+#RKF implementation for HP Prime non-numpy version
+
+def rkf(f,a,b,y0,tol,hmax,hmin,inHigher,inLower):
+  """
+  rkf(f,a,b,y0,tol,hmax,hmin,inHigher,inLower) -> [list(),list()]
+
+  Runge-Kutta-Fehlberg which combines RK 4th and RK 5h
+  order for solving an IVP in the form:
+        / y'(x) = f(x,y)
+        \ y(a) = y0
+
+  RK5 for truncation error:
+        y5_i+1 = y5_i + d1*k1 + d3*k3 + d4*k4 + d5*k5 + d6*k6
+
+  RK4 for local error estimation:
+        y4_i+1 = y4_i + c1*k1 + c3*k3 + c4*k4 + c5*k5
+
+  Evaluations:
+        k1 = h * f( x, y )
+        k2 = h * f( x + a2 * h , y + b21 * k1)
+        k3 = h * f( x + a3 * h , y + b31 * k1 + b32 * k2)
+        k4 = h * f( x + a4 * h , y + b41 * k1 + b42 * k2 + b43 * k3 )
+        k5 = h * f( x + a5 * h , y + b51 * k1 + b52 * k2 + b53 * k3 + b54 * k4 )
+        k6 = h * f( x + a6 * h , y + b61 * k1 + b62 * k2 + b63 * k3 + b64 * k4 + b65 * k5 )
+
+
+  Params
+  ----------
+      f        -> (function) to be solved
+      a        -> (float) initial interval value
+      b        -> (float) end interval value
+      y0       -> (float) value of the function at point a
+      tol      -> (float) tolerance for truncation error
+      hmax     -> (float) max step size
+      hmin     -> (float) min step size
+      inHigher -> (float) higher increment for step variation
+      inLower  -> (float) lower increment for step variation
+Return
+  -------
+      X     -> (list) independent variable
+      Y     -> (list) solution value of the function
+      P     -> (list) of steps used according to X
+  """
+
+
+
+#end
+
 
