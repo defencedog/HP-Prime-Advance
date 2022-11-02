@@ -1,6 +1,9 @@
-Youcan email for help
 
-http://holyjoe.org/hp/PrimeVars.htm
+# email for help
+http://holyjoe.org/hp/PrimeVars.htm 
 
+#email for help
 https://www.numericana.com/answer/hp-prime.htm#ppl
 
+
+https://wiki.tiplanet.org/HP_Prime/Commands#Lists
