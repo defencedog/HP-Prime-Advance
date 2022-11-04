@@ -2,8 +2,11 @@
 # email for help
 http://holyjoe.org/hp/PrimeVars.htm 
 
-#email for help
+# email for help
 https://www.numericana.com/answer/hp-prime.htm#ppl
+
+# email for help
+http://my.tbaytel.net/tgallo/hp%20prime/
 
 
 https://wiki.tiplanet.org/HP_Prime/Commands#Lists
