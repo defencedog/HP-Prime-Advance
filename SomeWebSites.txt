@@ -8,5 +8,8 @@ https://www.numericana.com/answer/hp-prime.htm#ppl
 # email for help
 http://my.tbaytel.net/tgallo/hp%20prime/
 
+# email for help
+https://github.com/debrouxl
+
 
 https://wiki.tiplanet.org/HP_Prime/Commands#Lists
